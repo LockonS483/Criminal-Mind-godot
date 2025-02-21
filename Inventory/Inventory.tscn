@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cimtn27qvmqnc"]
+[gd_scene load_steps=9 format=3 uid="uid://cimtn27qvmqnc"]
 
 [ext_resource type="Script" path="res://Inventory/Scripts/Inventory.gd" id="1_hxdm8"]
 [ext_resource type="PackedScene" uid="uid://by1lqbm1u8scs" path="res://Inventory/InventorySlot.tscn" id="2_edstu"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://beafkpar1rvdu" path="res://Inventory/Items/ItemResources/r_phone.tres" id="4_le8ay"]
 [ext_resource type="FontFile" uid="uid://coivbs3wbbg7i" path="res://PixelOperator8.ttf" id="4_rrwhb"]
 [ext_resource type="Texture2D" uid="uid://8xpu4sioi1so" path="res://Inventory/Icons/Inventory icon.png" id="5_7xmqr"]
+[ext_resource type="Resource" uid="uid://b7d4yh848qlnm" path="res://Inventory/Items/ItemResources/r_papertowel.tres" id="5_mawqc"]
 
 [node name="Inventory" type="Control" node_paths=PackedStringArray("inventory_grid", "tooltip") groups=["Inventory"]]
 layout_mode = 3
@@ -22,7 +23,7 @@ inventory_grid = NodePath("GridContainer")
 inventory_slot_scene = ExtResource("2_edstu")
 tooltip = NodePath("Tooltip")
 closed_pos = Vector2(0, -60)
-item_spawns = [ExtResource("3_7sdlm"), ExtResource("4_le8ay")]
+item_spawns = [ExtResource("3_7sdlm"), ExtResource("4_le8ay"), ExtResource("5_mawqc")]
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
