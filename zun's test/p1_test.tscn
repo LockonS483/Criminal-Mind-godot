@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq3ovb5d12tp5"]
+
+[ext_resource type="Script" path="res://inv_test.gd" id="1_c7lle"]
+[ext_resource type="PackedScene" uid="uid://dmsssc17q6swj" path="res://Exploration/Scenes/exploration_manager.tscn" id="2_hnitb"]
+
+[node name="P1_test" type="Node2D"]
+z_index = 5
+script = ExtResource("1_c7lle")
+
+[node name="ExplorationManager" parent="." instance=ExtResource("2_hnitb")]

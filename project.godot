@@ -24,6 +24,7 @@ GameState="*res://scenes/core/GameState.gd"
 
 directories/dch_directory={}
 directories/dtl_directory={
+"p1_test": "res://scenes/core/p1_test.dtl",
 "playthrough1": "res://scenes/core/playthrough1.dtl"
 }
 glossary/default_case_sensitive=true

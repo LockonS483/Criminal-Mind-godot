@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="ItemSpawnResource" load_steps=3 format=3 uid="uid://b7d4yh848qlnm"]
+[gd_resource type="Resource" script_class="ItemSpawnResource" load_steps=3 format=3 uid="uid://br63r3tu50uxv"]
 
-[ext_resource type="PackedScene" uid="uid://cptrofe5252f6" path="res://Inventory/Items/I_Papertowel.tscn" id="1_iqddk"]
-[ext_resource type="Script" path="res://Inventory/Scripts/ItemSpawnResource.gd" id="2_nrtg0"]
+[ext_resource type="PackedScene" uid="uid://cctvy3nuekc2r" path="res://Inventory/Items/I_Papertowel.tscn" id="1_8jiag"]
+[ext_resource type="Script" path="res://Inventory/Scripts/ItemSpawnResource.gd" id="2_bq7vb"]
 
 [resource]
-script = ExtResource("2_nrtg0")
-item_name = "Paper Towel"
-item_scene = ExtResource("1_iqddk")
+script = ExtResource("2_bq7vb")
+item_name = "PaperTowel"
+item_scene = ExtResource("1_8jiag")

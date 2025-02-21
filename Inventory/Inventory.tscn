@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://beafkpar1rvdu" path="res://Inventory/Items/ItemResources/r_phone.tres" id="4_le8ay"]
 [ext_resource type="FontFile" uid="uid://coivbs3wbbg7i" path="res://PixelOperator8.ttf" id="4_rrwhb"]
 [ext_resource type="Texture2D" uid="uid://8xpu4sioi1so" path="res://Inventory/Icons/Inventory icon.png" id="5_7xmqr"]
-[ext_resource type="Resource" uid="uid://b7d4yh848qlnm" path="res://Inventory/Items/ItemResources/r_papertowel.tres" id="5_mawqc"]
+[ext_resource type="Resource" uid="uid://br63r3tu50uxv" path="res://Inventory/Items/ItemResources/r_papertowel.tres" id="5_mawqc"]
 
 [node name="Inventory" type="Control" node_paths=PackedStringArray("inventory_grid", "tooltip") groups=["Inventory"]]
 layout_mode = 3

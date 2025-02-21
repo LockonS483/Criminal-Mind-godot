@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=3 uid="uid://6fxy61kuel6"]
+
+[ext_resource type="Script" path="res://scenes/main_office.gd" id="1_tmoxn"]
+[ext_resource type="Texture2D" uid="uid://cwyfxdfj4p2kc" path="res://SceneArt/Bathroom.png" id="2_d8ese"]
+[ext_resource type="Script" path="res://scenes/item.gd" id="3_ktvjl"]
+[ext_resource type="PackedScene" uid="uid://xkgc22deglng" path="res://scenes/core/cursor_item.tscn" id="4_yy3np"]
+[ext_resource type="Script" path="res://Exploration/Interactable.gd" id="5_irudj"]
+
+[node name="BathroomTest" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tmoxn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 476.0
+offset_bottom = 244.0
+texture = ExtResource("2_d8ese")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CursorItem" parent="." instance=ExtResource("4_yy3np")]
+layout_mode = 0
+
+[node name="InputBlocker" type="Control" parent="." groups=["InputBlocker"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Interactable2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 81.0
+offset_right = 195.0
+offset_bottom = 121.0
+script = ExtResource("5_irudj")
+jump_label = "~PaperTowel"
+
+[node name="Item" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 82.0
+offset_right = 324.0
+offset_bottom = 122.0
+script = ExtResource("3_ktvjl")
+item_type = "MagnifyingGlass"
+
+[node name="Item2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 81.0
+offset_right = 195.0
+offset_bottom = 121.0
+script = ExtResource("3_ktvjl")
+item_type = "MagnifyingGlass"
+
+[connection signal="mouse_entered" from="Item" to="Item" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Item" to="Item" method="_on_mouse_exited"]
+[connection signal="pressed" from="Item" to="Item" method="_on_pressed"]
+[connection signal="mouse_entered" from="Item2" to="Item2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Item2" to="Item2" method="_on_mouse_exited"]
+[connection signal="pressed" from="Item2" to="Item2" method="_on_pressed"]

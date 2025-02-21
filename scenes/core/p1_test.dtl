@@ -1,0 +1,63 @@
+if {OfficeIntro} == false:
+	[background scene="res://zun's test/main_office_test.tscn" fade="0.0"]
+	The air is thick with a sharp, coppery scent, like rusted iron left out in the rain, clings to the back of your throat.
+	[background arg="res://SceneArt/Body Zoom.png" fade="0.0"]
+	A man lying in a pool of blood a few meters away.
+	You almost choked at the sight.
+	[background scene="res://zun's test/main_office_test.tscn" fade="0.0"]
+	As your mind clears, you begin analyzing the situation.
+	A knife is in your hand, and you are covered in blood.
+	do GameState.add_item("Knife")
+	There is a clock on the wall\: 5\:00.
+	It is an office, but it feels like hell.
+	[wait time="0.5"]
+	set {OfficeIntro} = true
+	jump 
+[wait time="0.5"]
+do GameState.pause()
+label ~Phone
+Taking the belongings of the dead is unethical, but the phone might come in handy.
+do GameState.add_item("Phone")
+- To the hallway
+[background arg="res://SceneArt/Hallway.png" fade="0.0"]
+[wait time="2.0"]
+- To the bathroom
+label ~Bathroom
+[background scene="res://zun's test/bathroom_test.tscn" fade="0.0"]
+You come to the bathroom, trying to figure out what to do next.
+do GameState.pause()
+label ~PaperTowel
+You wipe off the blood using the paper towels, and put it in your pocket.
+do GameState.add_item("PaperTowel")
+[wait time="1.0"]
+[background scene="res://zun's test/bathroom_test.tscn" fade="0.0"]
+label ~Schedule
+[background arg="res://SceneArt/Cleaning Schedule.png" fade="0.0"]
+You see a schedule on the janitor's closet.
+[background arg="res://SceneArt/Cleaning Schedule 2.png" fade="0.0"]
+The schedule says the trash pickup comes at 5\:30.
+[wait time="1.0"]
+[background scene="res://zun's test/bathroom_test.tscn" fade="0.0"]
+- To the trash room
+	[background scene="res://zun's test/trash_room_1_test.tscn" fade="0.0"]
+	label ~Dumpster
+	(if don't have papertowel, phone, knife)You should throw some things away.
+	(if have papertowel, phone, knife) You throw away the paper towels and the knife, hoping the trash pickup will destroy the evidence.
+	- To the office
+		[background scene="res://zun's test/main_office_test.tscn" fade="0.0"]
+		You should make yourself look like a victim, so you smash your head against the wall.
+		You have made sure everything's done correctly. You call the police using a desk phone.
+		To PLAYTHROUGH 2
+- To the office
+	[background scene="res://zun's test/main_office_test.tscn" fade="0.0"]
+	You should throw away the phone, knife, and the paper towels at the trash room.
+	- To the trash room
+		[background scene="res://zun's test/trash_room_1_test.tscn" fade="0.0"]
+		label ~Dumpster
+		(if don't have papertowel, phone, knife)You should throw some things away.
+		(if have papertowel, phone, knife) You throw away the paper towels and the knife, hoping the trash pickup will destroy the evidence.
+		- To the office
+			[background scene="res://zun's test/main_office_test.tscn" fade="0.0"]
+			You should make yourself look like a victim, so you smash your head against the wall.
+			You have made sure everything's done correctly. You call the police using a desk phone.
+			To PLAYTHROUGH 2
