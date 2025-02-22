@@ -48,7 +48,7 @@ The schedule says the trash pickup comes at 5\:30.
 [background scene="res://zun's test/bathroom_test.tscn" fade="0.0"]
 jump ~Pausewait
 label ~goto_trashroom
-[background scene="res://zun's test/trash_room_1_test.tscn" fade="0.0"]
+[background scene="res://zun's test/trash_room_1_multi_test.tscn" fade="0.0"]
 set {CurrentLocation} = "Trashroom"
 You might be able to throw away evidence in the dumpster.
 jump ~Pausewait
