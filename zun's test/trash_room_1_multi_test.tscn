@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8p76iva3qysw"]
+
+[ext_resource type="Script" path="res://scenes/main_office.gd" id="1_xg36c"]
+[ext_resource type="Texture2D" uid="uid://ce41m5h2su7me" path="res://SceneArt/Trash Room.png" id="2_omy0u"]
+[ext_resource type="PackedScene" uid="uid://xkgc22deglng" path="res://scenes/core/cursor_item.tscn" id="3_epcna"]
+[ext_resource type="Script" path="res://scenes/Interactable.gd" id="4_iseir"]
+
+[node name="TrashRoom1Test" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xg36c")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 476.0
+offset_bottom = 244.0
+texture = ExtResource("2_omy0u")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CursorItem" parent="." instance=ExtResource("3_epcna")]
+layout_mode = 0
+
+[node name="InputBlocker" type="Control" parent="." groups=["InputBlocker"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Item" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 99.0
+offset_right = 136.0
+offset_bottom = 139.0
+script = ExtResource("4_iseir")
+item_type = "Knife"
+other_items = ["PaperTowel"]
+destroy_item = true
+goto_label = "~DestroyItem"
+
+[connection signal="mouse_entered" from="Item" to="Item" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Item" to="Item" method="_on_mouse_exited"]
+[connection signal="pressed" from="Item" to="Item" method="_on_pressed"]

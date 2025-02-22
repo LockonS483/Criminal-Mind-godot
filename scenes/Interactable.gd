@@ -2,6 +2,7 @@ extends TextureButton
 class_name Interactable
 
 @export var item_type: String
+@export var other_items = []
 @export var destroy_item = false
 # Set it to some unique ID to make it self-destruct and remember
 @export var self_destruct_id = 0
@@ -44,7 +45,17 @@ func _on_pressed() -> void:
 	if item_type == "":
 		trigger_interact()
 		return
-	if not CURSOR_ITEM.is_interactable(item_type):
+	
+	var is_right_item = false
+	if CURSOR_ITEM.is_interactable(item_type):
+		is_right_item = true
+	else:
+		if other_items.size() > 0:
+			for itm in other_items:
+				print(itm)
+				if CURSOR_ITEM.is_interactable(itm):
+					is_right_item = true
+	if not is_right_item:
 		return
 	
 	trigger_interact();

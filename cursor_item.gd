@@ -33,4 +33,5 @@ func is_interactable(item):
 		
 	if inventory.selected_item and item == inventory.selected_item.item_name:
 		return true
+	
 	return false
