@@ -1,5 +1,5 @@
 extends TextureButton
-class_name Interactable
+class_name OldInteractable
 
 @export var jump_label: String = "";
 @export var item_name: String = "";
@@ -20,3 +20,7 @@ func _gui_input(event: InputEvent):
 		
 		if item_name != "":
 			GameState.add_item(item_name)
+
+func _on_pressed() -> void:
+	print("bruh")
+	

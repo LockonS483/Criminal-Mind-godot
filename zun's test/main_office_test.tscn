@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scenes/main_office.gd" id="1_uscng"]
 [ext_resource type="Texture2D" uid="uid://0wsfwaqioqx7" path="res://SceneArt/Main Office.png" id="2_6hovp"]
-[ext_resource type="Script" path="res://scenes/item.gd" id="3_vvgjx"]
+[ext_resource type="Script" path="res://scenes/Interactable.gd" id="3_vvgjx"]
 [ext_resource type="PackedScene" uid="uid://xkgc22deglng" path="res://scenes/core/cursor_item.tscn" id="4_gjgva"]
-[ext_resource type="Script" path="res://Exploration/Interactable.gd" id="5_s677g"]
+[ext_resource type="Script" path="res://Exploration/OldInteractable.gd" id="5_s677g"]
 
 [node name="MainOfficeTest" type="Control"]
 layout_mode = 3

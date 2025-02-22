@@ -10,13 +10,13 @@ if {OfficeIntro} == false:
 	do GameState.add_item("Knife")
 	There is a clock on the wall\: 5\:00.
 	It is an office, but it feels like hell.
-	[wait time="0.5"]
 	set {OfficeIntro} = true
 	jump 
 [wait time="0.5"]
 do GameState.pause()
 label ~Phone
 Taking the belongings of the dead is unethical, but the phone might come in handy.
+[wait time="0.5" skippable="true"]
 do GameState.add_item("Phone")
 - To the hallway
 [background arg="res://SceneArt/Hallway.png" fade="0.0"]
@@ -25,6 +25,7 @@ do GameState.add_item("Phone")
 label ~Bathroom
 [background scene="res://zun's test/bathroom_test.tscn" fade="0.0"]
 You come to the bathroom, trying to figure out what to do next.
+[wait time="0.5"]
 do GameState.pause()
 label ~PaperTowel
 You wipe off the blood using the paper towels, and put it in your pocket.

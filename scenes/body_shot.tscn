@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/main_office.gd" id="1_r663i"]
 [ext_resource type="Texture2D" uid="uid://blgxyffkp1wh4" path="res://SceneArt/Body Zoom.png" id="2_lxvdl"]
-[ext_resource type="Script" path="res://scenes/item.gd" id="3_708b5"]
+[ext_resource type="Script" path="res://scenes/Interactable.gd" id="3_708b5"]
 [ext_resource type="PackedScene" uid="uid://xkgc22deglng" path="res://scenes/core/cursor_item.tscn" id="4_iho5o"]
 
 [node name="BodyShot" type="Control"]
