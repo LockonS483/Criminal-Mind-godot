@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbn3o6keioy3l"]
+
+[ext_resource type="Script" path="res://scenes/main_office.gd" id="1_jg72p"]
+[ext_resource type="Texture2D" uid="uid://b27wb4bnwmsww" path="res://SceneArt/Phone Close Up.png" id="2_2o5e1"]
+[ext_resource type="Script" path="res://scenes/Interactable.gd" id="3_l0hdq"]
+[ext_resource type="PackedScene" uid="uid://xkgc22deglng" path="res://scenes/core/cursor_item.tscn" id="4_soqfg"]
+
+[node name="PhoneCloseUp2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jg72p")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 476.0
+offset_bottom = 252.0
+texture = ExtResource("2_2o5e1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Int_Face" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 1.0
+offset_right = 135.0
+offset_bottom = 105.0
+script = ExtResource("3_l0hdq")
+item_type = "MagnifyingGlass"
+goto_label = "~Face"
+
+[node name="CursorItem" parent="." instance=ExtResource("4_soqfg")]
+layout_mode = 0
+
+[node name="InputBlocker" type="Control" parent="." groups=["InputBlocker"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[connection signal="mouse_entered" from="Int_Face" to="Int_Face" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Int_Face" to="Int_Face" method="_on_mouse_exited"]
+[connection signal="pressed" from="Int_Face" to="Int_Face" method="_on_pressed"]

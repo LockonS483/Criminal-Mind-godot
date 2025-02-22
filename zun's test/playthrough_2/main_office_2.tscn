@@ -1,18 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://uoufvr5o362n"]
+[gd_scene load_steps=5 format=3 uid="uid://biinfk0awx0po"]
 
-[ext_resource type="Script" path="res://scenes/main_office.gd" id="1_uscng"]
-[ext_resource type="Texture2D" uid="uid://0wsfwaqioqx7" path="res://SceneArt/Main Office.png" id="2_6hovp"]
-[ext_resource type="Script" path="res://scenes/Interactable.gd" id="3_vvgjx"]
-[ext_resource type="PackedScene" uid="uid://xkgc22deglng" path="res://scenes/core/cursor_item.tscn" id="4_gjgva"]
+[ext_resource type="Script" path="res://scenes/main_office.gd" id="1_2t8wf"]
+[ext_resource type="Texture2D" uid="uid://0wsfwaqioqx7" path="res://SceneArt/Main Office.png" id="2_fibb3"]
+[ext_resource type="PackedScene" uid="uid://xkgc22deglng" path="res://scenes/core/cursor_item.tscn" id="3_eqpsu"]
+[ext_resource type="Script" path="res://scenes/Interactable.gd" id="4_61ddf"]
 
-[node name="MainOfficeTest" type="Control"]
+[node name="MainOffice2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_uscng")
+script = ExtResource("1_2t8wf")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -27,11 +27,11 @@ color = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_right = 476.0
 offset_bottom = 244.0
-texture = ExtResource("2_6hovp")
+texture = ExtResource("2_fibb3")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="CursorItem" parent="." instance=ExtResource("4_gjgva")]
+[node name="CursorItem" parent="." instance=ExtResource("3_eqpsu")]
 layout_mode = 0
 
 [node name="InputBlocker" type="Control" parent="." groups=["InputBlocker"]]
@@ -49,9 +49,10 @@ offset_left = 252.0
 offset_top = 204.0
 offset_right = 292.0
 offset_bottom = 244.0
-script = ExtResource("3_vvgjx")
+script = ExtResource("4_61ddf")
 item_type = "MagnifyingGlass"
 goto_label = "~Body"
+flag_name = "body"
 
 [node name="Int_Deskphone" type="TextureButton" parent="."]
 layout_mode = 0
@@ -59,7 +60,7 @@ offset_left = 245.0
 offset_top = 118.0
 offset_right = 285.0
 offset_bottom = 158.0
-script = ExtResource("3_vvgjx")
+script = ExtResource("4_61ddf")
 item_type = "MagnifyingGlass"
 goto_label = "~Deskphone"
 

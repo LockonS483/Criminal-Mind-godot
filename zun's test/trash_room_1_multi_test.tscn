@@ -51,7 +51,7 @@ offset_right = 136.0
 offset_bottom = 139.0
 script = ExtResource("4_iseir")
 item_type = "Knife"
-other_items = ["PaperTowel"]
+other_items = ["PaperTowel", "Phone"]
 destroy_item = true
 goto_label = "~DestroyItem"
 

@@ -1,18 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://gh343rug55bd"]
+[gd_scene load_steps=5 format=3 uid="uid://bkkrhevhx60ec"]
 
-[ext_resource type="Script" path="res://scenes/main_office.gd" id="1_qtm6b"]
-[ext_resource type="Texture2D" uid="uid://ce41m5h2su7me" path="res://SceneArt/Trash Room.png" id="2_h0hsc"]
-[ext_resource type="PackedScene" uid="uid://xkgc22deglng" path="res://scenes/core/cursor_item.tscn" id="3_io5tc"]
-[ext_resource type="Script" path="res://scenes/Interactable.gd" id="5_xpnnb"]
+[ext_resource type="Script" path="res://scenes/main_office.gd" id="1_jtryo"]
+[ext_resource type="Texture2D" uid="uid://ce41m5h2su7me" path="res://SceneArt/Trash Room.png" id="2_rxqvi"]
+[ext_resource type="PackedScene" uid="uid://xkgc22deglng" path="res://scenes/core/cursor_item.tscn" id="3_7wetn"]
+[ext_resource type="Script" path="res://scenes/Interactable.gd" id="4_7pfly"]
 
-[node name="TrashRoom1Test" type="Control"]
+[node name="TrashRoom3" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_qtm6b")
+script = ExtResource("1_jtryo")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -27,11 +27,11 @@ color = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_right = 476.0
 offset_bottom = 244.0
-texture = ExtResource("2_h0hsc")
+texture = ExtResource("2_rxqvi")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="CursorItem" parent="." instance=ExtResource("3_io5tc")]
+[node name="CursorItem" parent="." instance=ExtResource("3_7wetn")]
 layout_mode = 0
 
 [node name="InputBlocker" type="Control" parent="." groups=["InputBlocker"]]
@@ -49,7 +49,7 @@ offset_left = 100.0
 offset_top = 97.0
 offset_right = 140.0
 offset_bottom = 137.0
-script = ExtResource("5_xpnnb")
+script = ExtResource("4_7pfly")
 item_type = "Knife"
 other_items = ["PaperTowel", "Phone"]
 destroy_item = true

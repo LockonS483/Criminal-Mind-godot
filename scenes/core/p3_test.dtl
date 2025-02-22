@@ -1,0 +1,112 @@
+label ~goto_office
+[background scene="res://zun's test/playthrough_3/main_office_3.tscn" fade="0.0"]
+set {CurrentLocation} = "Office"
+if {OfficeIntro} == false:
+	The air is thick with a sharp, coppery scent, like rusted iron left out in the rain, clings to the back of your throat.
+	[background arg="res://SceneArt/Body Zoom.png" fade="0.0"]
+	A man lying in a pool of blood beside you.
+	You almost choked at the sight.
+	[background scene="res://zun's test/playthrough_3/main_office_3.tscn" fade="0.0"]
+	As your mind clears, you begin analyzing the situation.
+	A knife is in your hand, and you are covered in blood.
+	do GameState.add_item("Knife")
+	set {EvidenceCount} += 1
+	There is a clock on the wall\: 5\:00.
+	It is an office, but it feels like hell.
+	set {OfficeIntro} = true
+	jump 
+	label ~goto_office
+label ~Pausewait
+[wait time="0.5"]
+do GameState.pause()
+label ~PickupPhone
+[background scene="res://zun's test/playthrough_3/phone_closeup_3.tscn" fade="0.0"]
+The phone is locked.
+jump ~Pausewait
+label ~Body
+[background scene="res://zun's test/playthrough_3/body_shot_3.tscn" fade="0.0"]
+You don't recognize this man.
+jump ~Pausewait
+label ~Face
+[background scene="res://zun's test/playthrough_3/face_closeup_3.tscn" fade="0.0"]
+You unlock the phone using the dead guy's face.
+The first thing you see is a conversation between you and a man called Bill, who you assume is the guy.
+He called you a traitor and threatened to send you to the police.
+You delete the conversation.
+Then, you put it in your pocket.
+do GameState.add_item("Phone")
+set {EvidenceCount} += 1
+jump ~goto_office
+jump ~Pausewait
+label ~goto_hallway
+[background scene="res://zun's test/playthrough_3/hallway_3.tscn" fade="0.0"]
+set {CurrentLocation} = "Hallway"
+jump ~Pausewait
+label ~goto_bathroom
+[background scene="res://zun's test/playthrough_3/bathroom_3.tscn" fade="0.0"]
+set {CurrentLocation} = "Bathroom"
+if {BathroomIntro} == false:
+	You come to the bathroom, trying to figure out what to do next.
+	set {BathroomIntro} = true
+jump ~Pausewait
+label ~Mop
+A mop. Perfect for cleaning up the mess.
+do GameState.add_item("Phone")
+set {EvidenceCount} += 1
+jump ~Pausewait
+label ~JanitorCloset
+[background scene="res://zun's test/playthrough_3/janitor_closet_3.tscn" fade="0.0"]
+jump ~Pausewait
+label ~PaperTowel
+You wipe off the blood using the paper towels, and put it in your pocket.
+do GameState.add_item("PaperTowel")
+set {EvidenceCount} += 1
+[wait time="0.5"]
+[background scene="res://zun's test/playthrough_3/janitor_closet_3.tscn" fade="0.0"]
+jump ~Pausewait
+label ~Schedule
+[background arg="res://SceneArt/Cleaning Schedule.png" fade="0.0"]
+You see a schedule on the janitor's closet.
+[background arg="res://SceneArt/Cleaning Schedule 2.png" fade="0.0"]
+The schedule says the trash pickup comes at 5\:30.
+[wait time="1.0"]
+[background scene="res://zun's test/playthrough_3/janitor_closet_3.tscn" fade="0.0"]
+jump ~Pausewait
+label ~goto_trashroom
+[background scene="res://zun's test/playthrough_3/trash_room_3.tscn" fade="0.0"]
+set {CurrentLocation} = "Trashroom"
+jump ~Pausewait
+label ~DestroyItem
+You throw away the evidence.
+jump ~Pausewait
+label ~SecurityRoom
+[background scene="res://zun's test/playthrough_3/security_room_3.tscn" fade="0.0"]
+if {SecurityIntro} == false:
+	You can see the surveillance footage on the monitor; some of the cameras are even pointed directly at the body.
+	set {SecurityIntro} = true
+jump ~Pausewait
+label ~Keyboard
+With just a few clicks, you erased the clips, and turn off the cameras.
+set {EvidenceCount} += 1
+jump 
+label ~End_p3
+[background scene="res://zun's test/ending_1_test.tscn" fade="0.0"]
+The police found your fingerprints all over the dead man's body.
+The bruises found on his limbs matched exactly to your fingers.
+No matter how you explained, no one believed that you're innocent.
+- Restart
+	jump p3_test/
+- Quit
+	(Quit)
+jump ~Pausewait
+label ~ChangeLocation
+if {CurrentLocation} == "Hallway":
+	- To the bathroom
+		jump ~goto_bathroom
+	- To the office
+		jump ~goto_office
+	- To the trash room
+		jump ~goto_trashroom
+else:
+	- To the hallway
+		jump ~goto_hallway

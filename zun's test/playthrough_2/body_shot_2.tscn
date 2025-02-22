@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://hx2x10p2c68m"]
+
+[ext_resource type="Script" path="res://scenes/main_office.gd" id="1_yco7w"]
+[ext_resource type="Texture2D" uid="uid://blgxyffkp1wh4" path="res://SceneArt/Body Zoom.png" id="2_puy6o"]
+[ext_resource type="Script" path="res://scenes/Interactable.gd" id="3_c0avt"]
+[ext_resource type="PackedScene" uid="uid://xkgc22deglng" path="res://scenes/core/cursor_item.tscn" id="4_va81m"]
+
+[node name="BodyShot2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yco7w")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 476.0
+offset_bottom = 252.0
+texture = ExtResource("2_puy6o")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Int_PickupPhone" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 189.0
+offset_right = 190.0
+offset_bottom = 252.0
+script = ExtResource("3_c0avt")
+item_type = "MagnifyingGlass"
+goto_label = "~PickupPhone"
+flag_name = "PickupPhone"
+
+[node name="CursorItem" parent="." instance=ExtResource("4_va81m")]
+layout_mode = 0
+
+[node name="InputBlocker" type="Control" parent="." groups=["InputBlocker"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[connection signal="mouse_entered" from="Int_PickupPhone" to="Int_PickupPhone" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Int_PickupPhone" to="Int_PickupPhone" method="_on_mouse_exited"]
+[connection signal="pressed" from="Int_PickupPhone" to="Int_PickupPhone" method="_on_pressed"]

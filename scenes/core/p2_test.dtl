@@ -1,5 +1,5 @@
 label ~goto_office
-[background scene="res://zun's test/main_office_test.tscn" fade="0.0"]
+[background scene="res://zun's test/playthrough_2/main_office_2.tscn" fade="0.0"]
 set {CurrentLocation} = "Office"
 if {OfficeIntro} == false:
 	The air is thick with a sharp, coppery scent, like rusted iron left out in the rain, clings to the back of your throat.
@@ -15,45 +15,49 @@ if {OfficeIntro} == false:
 	It is an office, but it feels like hell.
 	set {OfficeIntro} = true
 	jump 
+	label ~goto_office
 label ~Pausewait
 [wait time="0.5"]
 do GameState.pause()
-label ~Phone
-The phone is locked, but it might come in handy.
-do GameState.add_item("Phone")
-set {EvidenceCount} += 1
-[wait time="0.5"]
-do GameState.pause()
+label ~PickupPhone
+[background scene="res://zun's test/playthrough_2/phone_closeup_2.tscn" fade="0.0"]
+The phone is locked.
+jump ~Pausewait
 label ~Body
-[background scene="res://zun's test/body_shot_1_test.tscn" fade="0.0"]
+[background scene="res://zun's test/playthrough_2/body_shot_2.tscn" fade="0.0"]
 You don't recognize this man.
 jump ~Pausewait
-The phone is locked, but it might come in handy.
+label ~Face
+[background scene="res://zun's test/playthrough_2/face_closeup_2.tscn" fade="0.0"]
+You unlock the phone using the dead guy's face.
+The first thing you see is a conversation between you and a man called Bill, who you assume is the guy.
+He called you a traitor and threatened to send you to the police.
+You delete the conversation.
+Then, you put it in your pocket.
 do GameState.add_item("Phone")
 set {EvidenceCount} += 1
-[wait time="0.5"]
-[background scene="res://zun's test/main_office_test.tscn" fade="0.0"]
+jump ~goto_office
 jump ~Pausewait
 label ~goto_hallway
-[background arg="res://SceneArt/Hallway.png" fade="0.0"]
+[background scene="res://zun's test/playthrough_2/hallway_2.tscn" fade="0.0"]
 set {CurrentLocation} = "Hallway"
 jump ~Pausewait
 label ~goto_bathroom
-[background scene="res://zun's test/bathroom_test.tscn" fade="0.0"]
+[background scene="res://zun's test/playthrough_2/bathroom_2.tscn" fade="0.0"]
 set {CurrentLocation} = "Bathroom"
 if {BathroomIntro} == false:
 	You come to the bathroom, trying to figure out what to do next.
 	set {BathroomIntro} = true
 jump ~Pausewait
 label ~JanitorCloset
-[background scene="res://zun's test/janitor_closet_1_test.tscn" fade="0.0"]
+[background scene="res://zun's test/playthrough_2/janitor_closet_2.tscn" fade="0.0"]
 jump ~Pausewait
 label ~PaperTowel
 You wipe off the blood using the paper towels, and put it in your pocket.
 do GameState.add_item("PaperTowel")
 set {EvidenceCount} += 1
 [wait time="0.5"]
-[background scene="res://zun's test/bathroom_test.tscn" fade="0.0"]
+[background scene="res://zun's test/janitor_closet_1_test.tscn" fade="0.0"]
 jump ~Pausewait
 label ~Schedule
 [background arg="res://SceneArt/Cleaning Schedule.png" fade="0.0"]
@@ -61,14 +65,49 @@ You see a schedule on the janitor's closet.
 [background arg="res://SceneArt/Cleaning Schedule 2.png" fade="0.0"]
 The schedule says the trash pickup comes at 5\:30.
 [wait time="1.0"]
-[background scene="res://zun's test/janitor_closet_1_test.tscn" fade="0.0"]
+[background scene="res://zun's test/playthrough_2/janitor_closet_2.tscn" fade="0.0"]
 jump ~Pausewait
 label ~goto_trashroom
-[background scene="res://zun's test/trash_room_1_test.tscn" fade="0.0"]
+[background scene="res://zun's test/playthrough_2/trash_room_2.tscn" fade="0.0"]
 set {CurrentLocation} = "Trashroom"
 jump ~Pausewait
 label ~DestroyItem
 You throw away the evidence.
+jump ~Pausewait
+label ~SecurityRoom
+[background scene="res://zun's test/playthrough_2/security_room_2.tscn" fade="0.0"]
+if {SecurityIntro} == false:
+	You can see the surveillance footage on the monitor; some of the cameras are even pointed directly at the body.
+	set {SecurityIntro} = true
+jump ~Pausewait
+label ~Keyboard
+With just a few clicks, you erased the clips, and turn off the cameras.
+set {EvidenceCount} += 1
+jump ~Pausewait
+label ~Deskphone
+if {EvidenceCount} >= 4:
+	Before you use the deskphone to call the police, an idea came to your mind.
+	You should make yourself look like a victim.
+	Yes. That would be good.
+	After taking a deep breath, you smash your head against the wall so hard you almost pass out.
+	You have made sure everything's done correctly.
+	You call the police using a deskphone.
+	jump ~End_p2
+else:
+	You pick up the deskphone. Then you put it back down.
+	No. Don't call the police now.
+	What would they think if they come here now?
+	jump 
+jump ~Pausewait
+label ~End_p2
+[background scene="res://zun's test/ending_1_test.tscn" fade="0.0"]
+The police found your fingerprints all over the dead man's body.
+The bruises found on his limbs matched exactly to your fingers.
+No matter how you explained, no one believed that you're innocent.
+- Restart
+	jump p3_test/
+- Quit
+	(Quit)
 jump ~Pausewait
 label ~ChangeLocation
 if {CurrentLocation} == "Hallway":
@@ -81,28 +120,3 @@ if {CurrentLocation} == "Hallway":
 else:
 	- To the hallway
 		jump ~goto_hallway
-label ~Deskphone
-if {EvidenceCount} == 3:
-	Before you use the deskphone to call the police, an idea came to your mind.
-	You should make yourself look like a victim.
-	Yes. That would be good.
-	After taking a deep breath, you smash your head against the wall so hard you almost pass out.
-	You have made sure everything's done correctly.
-	You call the police using a deskphone.
-	jump ~End_p1
-else:
-	You pick up the deskphone. Then you put it back down.
-	No. Don't call the police now.
-	What would they think if they come here now?
-	jump 
-jump ~Pausewait
-label ~End_p1
-[background scene="res://zun's test/ending_1_test.tscn" fade="0.0"]
-You thought you did everything, but you missed one thing.
-The police saw you in the surveillance clips.
-They charged you for murder.
-- Restart
-	jump p2_test/
-- Quit
-	(Quit)
-jump ~Pausewait

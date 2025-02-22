@@ -1,18 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://6fxy61kuel6"]
+[gd_scene load_steps=5 format=3 uid="uid://dj8hbp56aj2er"]
 
-[ext_resource type="Script" path="res://scenes/main_office.gd" id="1_tmoxn"]
-[ext_resource type="Texture2D" uid="uid://cwyfxdfj4p2kc" path="res://SceneArt/Bathroom.png" id="2_d8ese"]
-[ext_resource type="Script" path="res://scenes/Interactable.gd" id="3_ktvjl"]
-[ext_resource type="PackedScene" uid="uid://xkgc22deglng" path="res://scenes/core/cursor_item.tscn" id="4_yy3np"]
+[ext_resource type="Script" path="res://scenes/main_office.gd" id="1_uiiq5"]
+[ext_resource type="Texture2D" uid="uid://cwyfxdfj4p2kc" path="res://SceneArt/Bathroom.png" id="2_x2wli"]
+[ext_resource type="PackedScene" uid="uid://xkgc22deglng" path="res://scenes/core/cursor_item.tscn" id="3_ke6v1"]
+[ext_resource type="Script" path="res://scenes/Interactable.gd" id="4_f3r2o"]
 
-[node name="BathroomTest" type="Control"]
+[node name="Bathroom3" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_tmoxn")
+script = ExtResource("1_uiiq5")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -27,11 +27,11 @@ color = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_right = 476.0
 offset_bottom = 244.0
-texture = ExtResource("2_d8ese")
+texture = ExtResource("2_x2wli")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="CursorItem" parent="." instance=ExtResource("4_yy3np")]
+[node name="CursorItem" parent="." instance=ExtResource("3_ke6v1")]
 layout_mode = 0
 
 [node name="InputBlocker" type="Control" parent="." groups=["InputBlocker"]]
@@ -49,9 +49,19 @@ offset_left = 284.0
 offset_top = 80.0
 offset_right = 324.0
 offset_bottom = 127.0
-script = ExtResource("3_ktvjl")
+script = ExtResource("4_f3r2o")
 item_type = "MagnifyingGlass"
 goto_label = "~JanitorCloset"
+
+[node name="Int_Mop" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 67.0
+offset_right = 165.0
+offset_bottom = 177.0
+script = ExtResource("4_f3r2o")
+item_type = "MagnifyingGlass"
+goto_label = "~Mop"
 
 [connection signal="mouse_entered" from="Int_JanitorCloset" to="Int_JanitorCloset" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Int_JanitorCloset" to="Int_JanitorCloset" method="_on_mouse_exited"]

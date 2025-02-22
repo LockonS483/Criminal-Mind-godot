@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckqo48crfxc7t"]
+
+[ext_resource type="Script" path="res://scenes/main_office.gd" id="1_3otsg"]
+[ext_resource type="Texture2D" uid="uid://cy05yc6wo0cot" path="res://SceneArt/Face Phone Close Up.png" id="2_44mv5"]
+[ext_resource type="PackedScene" uid="uid://xkgc22deglng" path="res://scenes/core/cursor_item.tscn" id="3_vsy1t"]
+
+[node name="FaceCloseup3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3otsg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 476.0
+offset_bottom = 252.0
+texture = ExtResource("2_44mv5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CursorItem" parent="." instance=ExtResource("3_vsy1t")]
+layout_mode = 0
+
+[node name="InputBlocker" type="Control" parent="." groups=["InputBlocker"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true

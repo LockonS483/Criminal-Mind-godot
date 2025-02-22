@@ -31,50 +31,16 @@ texture = ExtResource("2_oxiq7")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Item" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 261.0
-offset_top = 134.0
-offset_right = 320.0
-offset_bottom = 193.0
-script = ExtResource("3_moc7h")
-item_type = "PaperTowel"
-
-[node name="Item2" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 66.0
-offset_top = 91.0
-offset_right = 183.0
-offset_bottom = 148.0
-script = ExtResource("3_moc7h")
-item_type = "PaperTowel"
-
-[node name="Item3" type="TextureButton" parent="."]
+[node name="Int_Phone" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 166.0
 offset_right = 213.0
 offset_bottom = 274.0
 script = ExtResource("3_moc7h")
-item_type = "PaperTowel"
-
-[node name="Item4" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 321.0
-offset_top = 109.0
-offset_right = 410.0
-offset_bottom = 222.0
-script = ExtResource("3_moc7h")
-item_type = "PaperTowel"
-
-[node name="Item5" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 246.0
-offset_top = 56.0
-offset_right = 385.0
-offset_bottom = 99.0
-script = ExtResource("3_moc7h")
-item_type = "PaperTowel"
+item_type = "MagnifyingGlass"
+goto_label = "~Phone"
+flag_name = "phone"
 
 [node name="CursorItem" parent="." instance=ExtResource("4_mtnou")]
 layout_mode = 0
@@ -88,18 +54,6 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
-[connection signal="mouse_entered" from="Item" to="Item" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Item" to="Item" method="_on_mouse_exited"]
-[connection signal="pressed" from="Item" to="Item" method="_on_pressed"]
-[connection signal="mouse_entered" from="Item2" to="Item2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Item2" to="Item2" method="_on_mouse_exited"]
-[connection signal="pressed" from="Item2" to="Item2" method="_on_pressed"]
-[connection signal="mouse_entered" from="Item3" to="Item3" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Item3" to="Item3" method="_on_mouse_exited"]
-[connection signal="pressed" from="Item3" to="Item3" method="_on_pressed"]
-[connection signal="mouse_entered" from="Item4" to="Item4" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Item4" to="Item4" method="_on_mouse_exited"]
-[connection signal="pressed" from="Item4" to="Item4" method="_on_pressed"]
-[connection signal="mouse_entered" from="Item5" to="Item5" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Item5" to="Item5" method="_on_mouse_exited"]
-[connection signal="pressed" from="Item5" to="Item5" method="_on_pressed"]
+[connection signal="mouse_entered" from="Int_Phone" to="Int_Phone" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Int_Phone" to="Int_Phone" method="_on_mouse_exited"]
+[connection signal="pressed" from="Int_Phone" to="Int_Phone" method="_on_pressed"]
