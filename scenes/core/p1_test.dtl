@@ -31,6 +31,7 @@ You wipe off the blood using the paper towels, and put it in your pocket.
 do GameState.add_item("PaperTowel")
 [wait time="1.0"]
 [background scene="res://zun's test/bathroom_test.tscn" fade="0.0"]
+do GameState.pause()
 label ~Schedule
 [background arg="res://SceneArt/Cleaning Schedule.png" fade="0.0"]
 You see a schedule on the janitor's closet.
@@ -38,6 +39,8 @@ You see a schedule on the janitor's closet.
 The schedule says the trash pickup comes at 5\:30.
 [wait time="1.0"]
 [background scene="res://zun's test/bathroom_test.tscn" fade="0.0"]
+do GameState.pause()
+[wait time="1.0"]
 - To the trash room
 	[background scene="res://zun's test/trash_room_1_test.tscn" fade="0.0"]
 	label ~Dumpster

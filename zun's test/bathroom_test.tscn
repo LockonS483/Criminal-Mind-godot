@@ -53,6 +53,15 @@ offset_bottom = 121.0
 script = ExtResource("5_irudj")
 jump_label = "~PaperTowel"
 
+[node name="Interactable3" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 82.0
+offset_right = 324.0
+offset_bottom = 122.0
+script = ExtResource("5_irudj")
+jump_label = "~Schedule"
+
 [node name="Item" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 284.0
