@@ -19,6 +19,9 @@ func can_exist() -> bool:
 	if flag_name == "":
 		return true
 	
+	if not Dialogic.paused:
+		return false
+	
 	return !GameState.check_flag(flag_name)
 
 func _on_mouse_entered() -> void:

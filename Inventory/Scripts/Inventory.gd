@@ -63,7 +63,7 @@ func _on_slot_hovered(which: InventorySlot, is_hovering: bool):
 	if which.item:
 		tooltip.set_text(which.item.item_name)
 		tooltip.visible = is_hovering
-		tooltip.global_position = which.global_position
+		tooltip.global_position = Vector2(which.global_position.x - 10 - (which.item.item_name.length()*10), which.global_position.y)
 		tooltip.z_index = 140
 
 func _on_bag_button_input(event):
@@ -79,7 +79,6 @@ func toggle_on(open: bool):
 		target_pos = closed_pos
 
 # API::
-
 #spawn item and add to inventory
 func spawn_item(item_name: String):
 	for i in item_spawns.size():
