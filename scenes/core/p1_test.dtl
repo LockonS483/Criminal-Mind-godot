@@ -40,8 +40,8 @@ You see a schedule on the janitor's closet.
 The schedule says the trash pickup comes at 5\:30.
 [wait time="1.0"]
 [background scene="res://zun's test/bathroom_test.tscn" fade="0.0"]
-do GameState.pause()
 [wait time="1.0"]
+do GameState.pause()
 - To the trash room
 	[background scene="res://zun's test/trash_room_1_test.tscn" fade="0.0"]
 	label ~Dumpster
@@ -53,7 +53,7 @@ do GameState.pause()
 		You have made sure everything's done correctly. You call the police using a desk phone.
 		To PLAYTHROUGH 2
 - To the office
-	[background scene="res://zun's test/main_office_test.tscn" fade="0.0"]
+	[background scene="main_office_test.tscn" fade="0.0"]
 	You should throw away the phone, knife, and the paper towels at the trash room.
 	- To the trash room
 		[background scene="res://zun's test/trash_room_1_test.tscn" fade="0.0"]
