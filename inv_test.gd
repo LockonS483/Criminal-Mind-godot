@@ -9,7 +9,7 @@ func _ready():
 	add_child(inventory)
 	print("ready")
 	
-	Dialogic.start("p1_loc")
+	Dialogic.start("p1_test")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
