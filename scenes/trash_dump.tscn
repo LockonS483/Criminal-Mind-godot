@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/main_office.gd" id="1_xxdkd"]
 [ext_resource type="Texture2D" uid="uid://ce41m5h2su7me" path="res://SceneArt/Trash Room.png" id="2_4lqf5"]
-[ext_resource type="Script" path="res://scenes/item.gd" id="3_18scg"]
+[ext_resource type="Script" path="res://scenes/Interactable.gd" id="3_18scg"]
 [ext_resource type="PackedScene" uid="uid://xkgc22deglng" path="res://scenes/core/cursor_item.tscn" id="4_u5s3n"]
 
 [node name="TrashDump" type="Control"]

@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://uoufvr5o362n"]
+[gd_scene load_steps=5 format=3 uid="uid://uoufvr5o362n"]
 
 [ext_resource type="Script" path="res://scenes/main_office.gd" id="1_uscng"]
 [ext_resource type="Texture2D" uid="uid://0wsfwaqioqx7" path="res://SceneArt/Main Office.png" id="2_6hovp"]
-[ext_resource type="Script" path="res://scenes/item.gd" id="3_vvgjx"]
+[ext_resource type="Script" path="res://scenes/Interactable.gd" id="3_vvgjx"]
 [ext_resource type="PackedScene" uid="uid://xkgc22deglng" path="res://scenes/core/cursor_item.tscn" id="4_gjgva"]
-[ext_resource type="Script" path="res://Exploration/Interactable.gd" id="5_s677g"]
 
 [node name="MainOfficeTest" type="Control"]
 layout_mode = 3
@@ -44,16 +43,7 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
-[node name="Interactable" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 246.0
-offset_top = 119.0
-offset_right = 286.0
-offset_bottom = 159.0
-script = ExtResource("5_s677g")
-jump_label = "~Phone"
-
-[node name="Item" type="TextureButton" parent="."]
+[node name="Int_Phone" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 246.0
 offset_top = 119.0
@@ -61,7 +51,9 @@ offset_right = 286.0
 offset_bottom = 159.0
 script = ExtResource("3_vvgjx")
 item_type = "MagnifyingGlass"
+goto_label = "~Phone"
+flag_name = "phone"
 
-[connection signal="mouse_entered" from="Item" to="Item" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Item" to="Item" method="_on_mouse_exited"]
-[connection signal="pressed" from="Item" to="Item" method="_on_pressed"]
+[connection signal="mouse_entered" from="Int_Phone" to="Int_Phone" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Int_Phone" to="Int_Phone" method="_on_mouse_exited"]
+[connection signal="pressed" from="Int_Phone" to="Int_Phone" method="_on_pressed"]

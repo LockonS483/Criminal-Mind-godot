@@ -1,0 +1,71 @@
+label ~goto_office
+[background scene="res://zun's test/main_office_test.tscn" fade="0.0"]
+set {CurrentLocation} = "Office"
+if {OfficeIntro} == false:
+	The air is thick with a sharp, coppery scent, like rusted iron left out in the rain, clings to the back of your throat.
+	[background arg="res://SceneArt/Body Zoom.png" fade="0.0"]
+	A man lying in a pool of blood a few meters away.
+	You almost choked at the sight.
+	[background scene="res://zun's test/main_office_test.tscn" fade="0.0"]
+	As your mind clears, you begin analyzing the situation.
+	A knife is in your hand, and you are covered in blood.
+	do GameState.add_item("Knife")
+	There is a clock on the wall\: 5\:00.
+	It is an office, but it feels like hell.
+	[wait time="0.5"]
+	set {OfficeIntro} = true
+	jump 
+label ~Pausewait
+[wait time="0.5"]
+do GameState.pause()
+label ~Phone
+Taking the belongings of the dead is unethical, but the phone might come in handy.
+do GameState.add_item("Phone")
+jump ~Pausewait
+label ~goto_hallway
+[background arg="res://SceneArt/Hallway.png" fade="0.0"]
+set {CurrentLocation} = "Hallway"
+jump ~Pausewait
+label ~goto_bathroom
+[background scene="res://zun's test/bathroom_test.tscn" fade="0.0"]
+set {CurrentLocation} = "Bathroom"
+if {BathroomIntro} == false:
+	You come to the bathroom, trying to figure out what to do next.
+	set {BathroomIntro} = true
+jump ~Pausewait
+label ~PaperTowel
+You wipe off the blood using the paper towels, and put it in your pocket.
+do GameState.add_item("PaperTowel")
+[wait time="0.5"]
+[background scene="res://zun's test/bathroom_test.tscn" fade="0.0"]
+jump ~Pausewait
+label ~Schedule
+[background arg="res://SceneArt/Cleaning Schedule.png" fade="0.0"]
+You see a schedule on the janitor's closet.
+[background arg="res://SceneArt/Cleaning Schedule 2.png" fade="0.0"]
+The schedule says the trash pickup comes at 5\:30.
+[wait time="1.0"]
+[background scene="res://zun's test/bathroom_test.tscn" fade="0.0"]
+jump ~Pausewait
+label ~goto_trashroom
+[background scene="res://zun's test/trash_room_1_test.tscn" fade="0.0"]
+set {CurrentLocation} = "Trashroom"
+You might be able to throw away evidence in the dumpster.
+jump ~Pausewait
+label ~End_p1
+[background scene="res://zun's test/main_office_test.tscn" fade="0.0"]
+You should make yourself look like a victim, so you smash your head against the wall.
+You have made sure everything's done correctly. You call the police using a desk phone.
+To PLAYTHROUGH 2
+jump ~Pausewait
+label ~ChangeLocation
+if {CurrentLocation} == "Hallway":
+	- To the bathroom
+		jump ~goto_bathroom
+	- To the office
+		jump ~goto_office
+	- To the trash room
+		jump ~goto_trashroom
+else:
+	- To the hallway
+		jump ~goto_hallway

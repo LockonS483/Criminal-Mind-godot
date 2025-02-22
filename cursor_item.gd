@@ -23,8 +23,14 @@ func exit(item):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func is_interactable(item):
+	if item == "":
+		return true
+	if inventory == null:
+		inventory = Inventory.WhichInstance
+		
 	if not inventory.selected_item and item == "MagnifyingGlass":
 		return true
+		
 	if inventory.selected_item and item == inventory.selected_item.item_name:
 		return true
 	return false

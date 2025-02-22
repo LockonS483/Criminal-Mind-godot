@@ -39,7 +39,7 @@ The schedule says the trash pickup comes at 5\:30.
 [wait time="1.0"]
 [background scene="res://zun's test/bathroom_test.tscn" fade="0.0"]
 - To the trash room
-	[background scene="res://zun's test/trash_room_1_test.tscn" fade="0.0"]
+	[background scene="trash_room_1_test.tscn" fade="0.0"]
 	label ~Dumpster
 	(if don't have papertowel, phone, knife)You should throw some things away.
 	(if have papertowel, phone, knife) You throw away the paper towels and the knife, hoping the trash pickup will destroy the evidence.
@@ -48,6 +48,7 @@ The schedule says the trash pickup comes at 5\:30.
 		You should make yourself look like a victim, so you smash your head against the wall.
 		You have made sure everything's done correctly. You call the police using a desk phone.
 		To PLAYTHROUGH 2
+label ~ToOffice
 - To the office
 	[background scene="res://zun's test/main_office_test.tscn" fade="0.0"]
 	You should throw away the phone, knife, and the paper towels at the trash room.
@@ -61,3 +62,9 @@ The schedule says the trash pickup comes at 5\:30.
 			You should make yourself look like a victim, so you smash your head against the wall.
 			You have made sure everything's done correctly. You call the police using a desk phone.
 			To PLAYTHROUGH 2
+label ~ChangeLocation
+if {CurrentLocation} == "Hallway":
+	- To the bathroom
+	- To the office
+	- To the trash room
+else:

@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://6fxy61kuel6"]
+[gd_scene load_steps=5 format=3 uid="uid://6fxy61kuel6"]
 
 [ext_resource type="Script" path="res://scenes/main_office.gd" id="1_tmoxn"]
 [ext_resource type="Texture2D" uid="uid://cwyfxdfj4p2kc" path="res://SceneArt/Bathroom.png" id="2_d8ese"]
-[ext_resource type="Script" path="res://scenes/item.gd" id="3_ktvjl"]
+[ext_resource type="Script" path="res://scenes/Interactable.gd" id="3_ktvjl"]
 [ext_resource type="PackedScene" uid="uid://xkgc22deglng" path="res://scenes/core/cursor_item.tscn" id="4_yy3np"]
-[ext_resource type="Script" path="res://Exploration/Interactable.gd" id="5_irudj"]
 
 [node name="BathroomTest" type="Control"]
 layout_mode = 3
@@ -44,15 +43,6 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
-[node name="Interactable2" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 155.0
-offset_top = 81.0
-offset_right = 195.0
-offset_bottom = 121.0
-script = ExtResource("5_irudj")
-jump_label = "~PaperTowel"
-
 [node name="Item" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 284.0
@@ -61,6 +51,7 @@ offset_right = 324.0
 offset_bottom = 122.0
 script = ExtResource("3_ktvjl")
 item_type = "MagnifyingGlass"
+goto_label = "~Schedule"
 
 [node name="Item2" type="TextureButton" parent="."]
 layout_mode = 0
@@ -70,6 +61,7 @@ offset_right = 195.0
 offset_bottom = 121.0
 script = ExtResource("3_ktvjl")
 item_type = "MagnifyingGlass"
+goto_label = "~PaperTowel"
 
 [connection signal="mouse_entered" from="Item" to="Item" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Item" to="Item" method="_on_mouse_exited"]

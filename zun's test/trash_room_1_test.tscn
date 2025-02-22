@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scenes/main_office.gd" id="1_qtm6b"]
 [ext_resource type="Texture2D" uid="uid://ce41m5h2su7me" path="res://SceneArt/Trash Room.png" id="2_h0hsc"]
 [ext_resource type="PackedScene" uid="uid://xkgc22deglng" path="res://scenes/core/cursor_item.tscn" id="3_io5tc"]
-[ext_resource type="Script" path="res://Exploration/Interactable.gd" id="4_jgf28"]
-[ext_resource type="Script" path="res://scenes/item.gd" id="5_xpnnb"]
+[ext_resource type="Script" path="res://Exploration/OldInteractable.gd" id="4_jgf28"]
+[ext_resource type="Script" path="res://scenes/Interactable.gd" id="5_xpnnb"]
 
 [node name="TrashRoom1Test" type="Control"]
 layout_mode = 3
