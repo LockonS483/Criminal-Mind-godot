@@ -25,3 +25,7 @@ func _update_background(argument:String, _time:float) -> void:
 	#else:
 		#image_node.texture = null
 		#color_node.color = Color.from_string(argument, Color.TRANSPARENT)
+
+
+func _on_interactable_3_pressed():
+	pass # Replace with function body.
