@@ -8,13 +8,15 @@
 
 [node name="Interactable" type="TextureButton" parent="."]
 offset_top = 120.0
-offset_right = 20.0
-offset_bottom = 140.0
+offset_right = 42.0
+offset_bottom = 162.0
 texture_normal = ExtResource("1_mfvdo")
 texture_pressed = ExtResource("1_mfvdo")
 texture_hover = ExtResource("1_mfvdo")
 texture_disabled = ExtResource("1_mfvdo")
 texture_focused = ExtResource("1_mfvdo")
+ignore_texture_size = true
+stretch_mode = 0
 script = ExtResource("1_vtom8")
 jump_label = "~ChangeLocation"
 can_repeat = true

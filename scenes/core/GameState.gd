@@ -37,9 +37,6 @@ func check_flag(flag_name: String) -> bool:
 
 func set_flag(flag_name: String, val: bool) -> void:
 	game_flags[flag_name] = val
-<<<<<<< HEAD
-
+	
 func Set_Dialogic_variable(vname: String, val: Variant):
 	Dialogic.VAR.set_variable(vname, val)
-=======
->>>>>>> 3abf2e890394ccc5b78049517f0abe6500fcfd51

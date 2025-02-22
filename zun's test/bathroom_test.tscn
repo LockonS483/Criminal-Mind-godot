@@ -43,24 +43,6 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
-<<<<<<< HEAD
-[node name="Item" type="TextureButton" parent="."]
-=======
-[node name="Int_Schedule" type="TextureButton" parent="."]
->>>>>>> 3abf2e890394ccc5b78049517f0abe6500fcfd51
-layout_mode = 0
-offset_left = 284.0
-offset_top = 82.0
-offset_right = 324.0
-offset_bottom = 122.0
-script = ExtResource("3_ktvjl")
-item_type = "MagnifyingGlass"
-goto_label = "~Schedule"
-<<<<<<< HEAD
-=======
-flag_name = "schedule"
->>>>>>> 3abf2e890394ccc5b78049517f0abe6500fcfd51
-
 [node name="Int_Papertowel" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 155.0
@@ -70,14 +52,22 @@ offset_bottom = 121.0
 script = ExtResource("3_ktvjl")
 item_type = "MagnifyingGlass"
 goto_label = "~PaperTowel"
-<<<<<<< HEAD
-=======
 flag_name = "papertowel"
->>>>>>> 3abf2e890394ccc5b78049517f0abe6500fcfd51
 
-[connection signal="mouse_entered" from="Int_Schedule" to="Int_Schedule" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Int_Schedule" to="Int_Schedule" method="_on_mouse_exited"]
-[connection signal="pressed" from="Int_Schedule" to="Int_Schedule" method="_on_pressed"]
+[node name="Int_Schedule" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 80.0
+offset_right = 324.0
+offset_bottom = 140.0
+script = ExtResource("3_ktvjl")
+item_type = "MagnifyingGlass"
+goto_label = "~Schedule"
+flag_name = "schedule"
+
 [connection signal="mouse_entered" from="Int_Papertowel" to="Int_Papertowel" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Int_Papertowel" to="Int_Papertowel" method="_on_mouse_exited"]
 [connection signal="pressed" from="Int_Papertowel" to="Int_Papertowel" method="_on_pressed"]
+[connection signal="mouse_entered" from="Int_Schedule" to="Int_Schedule" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Int_Schedule" to="Int_Schedule" method="_on_mouse_exited"]
+[connection signal="pressed" from="Int_Schedule" to="Int_Schedule" method="_on_pressed"]

@@ -37,7 +37,6 @@ func _on_mouse_exited() -> void:
 	CURSOR_ITEM.exit(item_type)
 
 func _on_pressed() -> void:
-<<<<<<< HEAD
 	print("pressed")
 	if not can_exist():
 		return
@@ -45,12 +44,6 @@ func _on_pressed() -> void:
 	if item_type == "":
 		trigger_interact()
 		return
-	
-=======
-	if not can_exist():
-		return
-		
->>>>>>> 3abf2e890394ccc5b78049517f0abe6500fcfd51
 	if not CURSOR_ITEM.is_interactable(item_type):
 		return
 	
