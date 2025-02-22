@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://gh343rug55bd"]
+[gd_scene load_steps=5 format=3 uid="uid://gh343rug55bd"]
 
 [ext_resource type="Script" path="res://scenes/main_office.gd" id="1_qtm6b"]
 [ext_resource type="Texture2D" uid="uid://ce41m5h2su7me" path="res://SceneArt/Trash Room.png" id="2_h0hsc"]
 [ext_resource type="PackedScene" uid="uid://xkgc22deglng" path="res://scenes/core/cursor_item.tscn" id="3_io5tc"]
-[ext_resource type="Script" path="res://Exploration/OldInteractable.gd" id="4_jgf28"]
 [ext_resource type="Script" path="res://scenes/Interactable.gd" id="5_xpnnb"]
 
 [node name="TrashRoom1Test" type="Control"]
@@ -44,15 +43,6 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
-[node name="Interactable" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 99.0
-offset_top = 99.0
-offset_right = 139.0
-offset_bottom = 139.0
-script = ExtResource("4_jgf28")
-jump_label = "~Dumpster"
-
 [node name="Item" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 96.0
@@ -60,7 +50,9 @@ offset_top = 99.0
 offset_right = 136.0
 offset_bottom = 139.0
 script = ExtResource("5_xpnnb")
-item_type = "MagnifyingGlass"
+item_type = "Knife"
+destroy_item = true
+goto_label = "~DestroyItem"
 
 [connection signal="mouse_entered" from="Item" to="Item" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Item" to="Item" method="_on_mouse_exited"]
