@@ -21,8 +21,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hxdm8")
-rows = 1
-cols = 9
+rows = 5
+cols = 1
 inventory_grid = NodePath("GridContainer")
 inventory_slot_scene = ExtResource("2_edstu")
 tooltip = NodePath("Tooltip")
@@ -31,10 +31,10 @@ item_spawns = [ExtResource("3_7sdlm"), ExtResource("4_le8ay"), ExtResource("5_ma
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 5.0
-offset_right = 67.0
-offset_bottom = 65.0
+offset_left = 428.0
+offset_top = 3.0
+offset_right = 488.0
+offset_bottom = 63.0
 
 [node name="Tooltip" type="ColorRect" parent="."]
 layout_mode = 0
@@ -45,18 +45,21 @@ script = ExtResource("3_d15nb")
 
 [node name="MarginContainer" type="MarginContainer" parent="Tooltip"]
 layout_mode = 0
-offset_right = 40.0
+offset_right = 140.0
 offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Tooltip/MarginContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_rrwhb")
+text = "PaperTowel"
+horizontal_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_top = 60.0
-offset_right = 60.0
-offset_bottom = 120.0
+offset_left = 361.0
+offset_top = 2.0
+offset_right = 421.0
+offset_bottom = 62.0
 texture_normal = ExtResource("5_7xmqr")
 texture_pressed = ExtResource("5_7xmqr")
 texture_hover = ExtResource("5_7xmqr")

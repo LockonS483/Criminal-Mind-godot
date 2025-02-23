@@ -10,6 +10,9 @@ class_name OldInteractable
 func _on_pressed() -> void:
 	if !can_repeat and triggered:
 		return
+	
+	if not Dialogic.paused:
+		return
 
 	if jump_label != "":
 		GameState.goto_label(jump_label)
