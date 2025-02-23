@@ -54,4 +54,5 @@ func Back_to_Menu():
 	get_tree().change_scene_to_file("res://main_menu.tscn")
 
 func Start_Ending():
+	MusicController.stop_music()
 	TransitionScreen.WhichInstance.start_transition(ending_scene)

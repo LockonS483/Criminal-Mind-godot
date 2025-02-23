@@ -1,4 +1,3 @@
-[music path="res://sounds/BGM.wav" fade="0.0" volume="0.0"]
 label ~goto_office
 [background scene="res://zun's test/playthrough_3/main_office_3.tscn" fade="0.0"]
 set {CurrentLocation} = "Office"
@@ -27,7 +26,7 @@ The phone is locked.
 jump ~Pausewait
 label ~Body
 [background scene="res://zun's test/playthrough_3/body_shot_3.tscn" fade="0.0"]
-You recognize this man. He is Bill. 
+You recognize this man. He is Bill.
 Jerk.
 jump ~Pausewait
 label ~Face

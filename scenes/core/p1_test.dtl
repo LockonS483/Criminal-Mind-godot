@@ -1,4 +1,3 @@
-[music path="res://sounds/BGM.wav" fade="0.0" volume="0.0"]
 label ~goto_office
 [background scene="res://zun's test/main_office_test.tscn" fade="0.0"]
 set {CurrentLocation} = "Office"
@@ -106,6 +105,5 @@ There was no escaping. You were doomed.
 	do GameState.New_Playthrough()
 	jump p2_test/
 - Quit
-	[music fade="0.0" volume="0.0"]
 	do GameState.Back_to_Menu()
 jump ~Pausewait

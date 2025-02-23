@@ -14,7 +14,7 @@ sprite = NodePath("Sprite2D")
 label = NodePath("Label")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(4, 4)
+scale = Vector2(2, 2)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

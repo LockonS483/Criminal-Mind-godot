@@ -19,12 +19,12 @@ config/icon="res://icon.svg"
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 GameState="*res://scenes/core/GameState.gd"
+MusicController="*res://MusicController.tscn"
 
 [dialogic]
 
 directories/dch_directory={}
 directories/dtl_directory={
-"menu": "res://scenes/core/menu.dtl",
 "p1_loc": "res://scenes/core/p1_loc.dtl",
 "p1_test": "res://scenes/core/p1_test.dtl",
 "p2_test": "res://scenes/core/p2_test.dtl",
@@ -103,6 +103,7 @@ dialogic_default_action={
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 textures/default_filters/anisotropic_filtering_level=3
 textures/decals/filter=0
 textures/light_projectors/filter=0
