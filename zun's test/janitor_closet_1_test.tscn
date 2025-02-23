@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://btngf1o6md4ge"]
+[gd_scene load_steps=9 format=3 uid="uid://btngf1o6md4ge"]
 
 [ext_resource type="Script" path="res://scenes/main_office.gd" id="1_0qnlc"]
-[ext_resource type="Texture2D" uid="uid://bhmvnvr2afgt8" path="res://SceneArt/Janitor's closet.png" id="2_lswbc"]
+[ext_resource type="Texture2D" uid="uid://todsjsmr8kum" path="res://SceneArt/Individual scenes and icons/Janitor's closet - No item.png" id="2_0nngi"]
 [ext_resource type="PackedScene" uid="uid://xkgc22deglng" path="res://scenes/core/cursor_item.tscn" id="3_cwolr"]
+[ext_resource type="Texture2D" uid="uid://b4b5lmyhqegmc" path="res://SceneArt/Individual scenes and icons/Paper Towel On map.png" id="4_ri6oc"]
 [ext_resource type="Script" path="res://scenes/Interactable.gd" id="4_wl3c2"]
+[ext_resource type="Texture2D" uid="uid://dg563rwhnvcdy" path="res://SceneArt/Individual scenes and icons/Detergent on map.png" id="5_jedvm"]
+[ext_resource type="Texture2D" uid="uid://bapheuwntx0p3" path="res://SceneArt/Individual scenes and icons/Cloths on map.png" id="5_nnn8q"]
+[ext_resource type="Texture2D" uid="uid://cowfbm8cqvpck" path="res://SceneArt/Individual scenes and icons/Gloves on map.png" id="8_1ey0d"]
 
 [node name="JanitorClosetTest1" type="Control"]
 layout_mode = 3
@@ -27,9 +31,29 @@ color = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_right = 476.0
 offset_bottom = 244.0
-texture = ExtResource("2_lswbc")
+texture = ExtResource("2_0nngi")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="ClothsOnMap" type="Sprite2D" parent="."]
+position = Vector2(227, 122)
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("5_nnn8q")
+
+[node name="PaperTowelOnMap" type="Sprite2D" parent="."]
+position = Vector2(240.75, 171.75)
+scale = Vector2(0.161667, 0.161667)
+texture = ExtResource("4_ri6oc")
+
+[node name="DetergentOnMap" type="Sprite2D" parent="."]
+position = Vector2(291, 189)
+scale = Vector2(0.192, 0.192)
+texture = ExtResource("5_jedvm")
+
+[node name="GlovesOnMap" type="Sprite2D" parent="."]
+position = Vector2(226.167, 76.5)
+scale = Vector2(0.246667, 0.246667)
+texture = ExtResource("8_1ey0d")
 
 [node name="CursorItem" parent="." instance=ExtResource("3_cwolr")]
 layout_mode = 0
@@ -43,7 +67,7 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
-[node name="Int_PaperTowel" type="TextureButton" parent="."]
+[node name="Int_PaperTowel" type="TextureButton" parent="." node_paths=PackedStringArray("associated_sprite")]
 layout_mode = 0
 offset_left = 217.0
 offset_top = 138.0
@@ -51,6 +75,7 @@ offset_right = 269.0
 offset_bottom = 198.0
 script = ExtResource("4_wl3c2")
 item_type = "MagnifyingGlass"
+associated_sprite = NodePath("../PaperTowelOnMap")
 goto_label = "~PaperTowel"
 flag_name = "papertowel"
 

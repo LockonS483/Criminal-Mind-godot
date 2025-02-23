@@ -3,6 +3,7 @@ class_name Interactable
 
 @export var item_type: String
 @export var other_items = []
+@export var associated_sprite: Node2D
 @export var destroy_item = false
 # Set it to some unique ID to make it self-destruct and remember
 @export var self_destruct_id = 0
@@ -13,6 +14,11 @@ var CURSOR_ITEM
 func _ready() -> void:
 	if GameState.is_self_destruct(self_destruct_id):
 		queue_free()
+	if associated_sprite != null:
+		if flag_name != null:
+			if GameState.check_flag(flag_name):
+				associated_sprite.visible = false
+	
 	CURSOR_ITEM = get_tree().get_first_node_in_group("CursorItem")
 
 func can_exist() -> bool:
@@ -64,7 +70,8 @@ func _on_pressed() -> void:
 	trigger_interact();
 
 func trigger_interact():
-	#visible = false
+	if associated_sprite != null:
+		associated_sprite.visible = false
 	
 	if item_type != "":
 		CURSOR_ITEM.exit(item_type)
