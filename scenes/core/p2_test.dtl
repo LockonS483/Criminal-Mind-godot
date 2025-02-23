@@ -6,14 +6,15 @@ if {OfficeIntro} == false:
 	The air is thick with a sharp, coppery scent, like rusted iron left out in the rain, clings to the back of your throat.
 	[background arg="res://SceneArt/Body Zoom.png" fade="0.0"]
 	A man lying in a pool of blood beside you.
-	You almost choked at the sight.
+	You look away.
 	[background scene="res://zun's test/main_office_test.tscn" fade="0.0"]
-	As your mind clears, you begin analyzing the situation.
+	You begin analyzing the situation.
 	A knife is in your hand, and you are covered in blood.
+	Whose blood?
 	do GameState.add_item("Knife")
 	set {EvidenceCount} += 1
-	There is a clock on the wall\: 5\:00.
-	It is an office, but it feels like hell.
+	It's 5AM.
+	You are in an office, but it feels like hell.
 	set {OfficeIntro} = true
 	jump 
 	label ~goto_office
@@ -26,12 +27,12 @@ The phone is locked.
 jump ~Pausewait
 label ~Body
 [background scene="res://zun's test/playthrough_2/body_shot_2.tscn" fade="0.0"]
-You don't recognize this man.
+This man looks familiar.
 jump ~Pausewait
 label ~Face
 [background scene="res://zun's test/playthrough_2/face_closeup_2.tscn" fade="0.0"]
-You unlock the phone using the dead guy's face.
-The first thing you see is a conversation between you and a man called Bill, who you assume is the guy.
+You unlock the phone using the dead man's face.
+The first thing you see is a conversation between you and a man called Bill, who you assume is the poor fellow.
 He called you a traitor and threatened to send you to the police.
 You delete the conversation.
 Then, you put it in your pocket.
@@ -54,7 +55,7 @@ label ~JanitorCloset
 [background scene="res://zun's test/playthrough_2/janitor_closet_2.tscn" fade="0.0"]
 jump ~Pausewait
 label ~PaperTowel
-You wipe off the blood using the paper towels, and put it in your pocket.
+You wipe off the blood and your sweat using the paper towels, then put them away in your pocket.
 do GameState.add_item("PaperTowel")
 set {EvidenceCount} += 1
 [wait time="0.5"]
@@ -73,7 +74,7 @@ label ~goto_trashroom
 set {CurrentLocation} = "Trashroom"
 jump ~Pausewait
 label ~DestroyItem
-You throw away the evidence.
+You throw the evidence away.
 jump ~Pausewait
 label ~SecurityRoom
 [background scene="res://zun's test/playthrough_2/security_room_2.tscn" fade="0.0"]
@@ -89,10 +90,9 @@ label ~Deskphone
 if {EvidenceCount} >= 4:
 	Before you use the deskphone to call the police, an idea came to your mind.
 	You should make yourself look like a victim.
-	Yes. That would be good.
 	After taking a deep breath, you smash your head against the wall so hard you almost pass out.
-	You have made sure everything's done correctly.
-	You call the police using a deskphone.
+	You have made sure everything's done correctly this time.
+	Then, you dial the number.
 	jump ~End_p2
 else:
 	You pick up the deskphone. Then you put it back down.
@@ -105,7 +105,8 @@ label ~End_p2
 [background scene="res://zun's test/ending_1_test.tscn" fade="0.0"]
 The police found your fingerprints all over the dead man's body.
 The bruises found on his limbs matched exactly to your fingers.
-No matter how you explained, no one believed that you're innocent.
+No matter how hard you explained, no one believed that you're innocent.
+No one believes a murderer.
 - "Restart"
 	do GameState.New_Playthrough()
 	jump p3_test/

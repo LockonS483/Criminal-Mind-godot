@@ -49,11 +49,11 @@ label ~JanitorCloset
 [background scene="res://zun's test/janitor_closet_1_test.tscn" fade="0.0"]
 jump ~Pausewait
 label ~PaperTowel
-You wipe off the blood using the paper towels, and put it in your pocket.
+You wipe off the blood and your sweat using the paper towels, then you put them away in your pocket.
 do GameState.add_item("PaperTowel")
 set {EvidenceCount} += 1
 [wait time="0.5"]
-[background scene="res://zun's test/bathroom_test.tscn" fade="0.0"]
+[background scene="res://zun's test/janitor_closet_1_test.tscn" fade="0.0"]
 jump ~Pausewait
 label ~Schedule
 [background arg="res://SceneArt/Cleaning Schedule.png" fade="0.0"]
@@ -68,7 +68,7 @@ label ~goto_trashroom
 set {CurrentLocation} = "Trashroom"
 jump ~Pausewait
 label ~DestroyItem
-You throw away the evidence.
+You throw the evidence away.
 jump ~Pausewait
 label ~ChangeLocation
 if {CurrentLocation} == "Hallway":
@@ -86,7 +86,7 @@ if {EvidenceCount} == 3:
 	Before you use the deskphone to call the police, an idea came to your mind.
 	You should make yourself look like a victim.
 	Yes. That would be good.
-	After taking a deep breath, you smash your head against the wall so hard you almost pass out.
+	After taking a deep breath, you bang your head against the wall so hard you almost pass out.
 	You have made sure everything's done correctly.
 	You call the police using a deskphone.
 	jump ~End_p1
@@ -99,9 +99,9 @@ jump ~Pausewait
 label ~End_p1
 [sound path="res://sounds/Fail.wav" volume="0.0"]
 [background scene="res://zun's test/ending_1_test.tscn" fade="0.0"]
-You thought you did everything, but you missed one thing.
-The police saw you in the surveillance clips.
-They charged you for murder.
+You thought you did everything...
+but the police saw you in the surveillance clips.
+There was no escaping. You were doomed.
 - "Restart"
 	do GameState.New_Playthrough()
 	jump p2_test/
