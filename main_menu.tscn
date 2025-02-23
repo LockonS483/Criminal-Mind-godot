@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cf1mdtix1122i"]
+[gd_scene load_steps=5 format=3 uid="uid://cf1mdtix1122i"]
 
 [ext_resource type="Texture2D" uid="uid://j2rqndi6vawq" path="res://SceneArt/Title maybe.png" id="1_2g53o"]
 [ext_resource type="Script" path="res://main_menu.gd" id="1_xvoxh"]
 [ext_resource type="PackedScene" uid="uid://c6otqrfls4mo0" path="res://inv_test.tscn" id="2_4mnjw"]
+[ext_resource type="FontFile" uid="uid://coivbs3wbbg7i" path="res://PixelOperator8.ttf" id="4_ihrih"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -51,6 +52,7 @@ pivot_offset = Vector2(43, 0)
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ihrih")
 text = " Wake Up "
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
