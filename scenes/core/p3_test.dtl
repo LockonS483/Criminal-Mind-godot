@@ -3,17 +3,18 @@ label ~goto_office
 [background scene="res://zun's test/playthrough_3/main_office_3.tscn" fade="0.0"]
 set {CurrentLocation} = "Office"
 if {OfficeIntro} == false:
-	The air is thick with a sharp, coppery scent, like rusted iron left out in the rain, clings to the back of your throat.
+	Blood.
 	[background arg="res://SceneArt/Body Zoom.png" fade="0.0"]
 	A man lying in a pool of blood beside you.
-	You almost choked at the sight.
+	Your heart beats fast against your chest.
 	[background scene="res://zun's test/playthrough_3/main_office_3.tscn" fade="0.0"]
-	As your mind clears, you begin analyzing the situation.
-	A knife is in your hand, and you are covered in blood.
+	You look around.
+	A knife is in your hand.
+	Blood all over you.
 	do GameState.add_item("Knife")
 	set {EvidenceCount} += 1
-	There is a clock on the wall\: 5\:00.
-	It is an office, but it feels like hell.
+	5AM.
+	Hell.
 	set {OfficeIntro} = true
 	jump 
 	label ~goto_office
@@ -26,12 +27,13 @@ The phone is locked.
 jump ~Pausewait
 label ~Body
 [background scene="res://zun's test/playthrough_3/body_shot_3.tscn" fade="0.0"]
-You don't recognize this man.
+You recognize this man. He is Bill. 
+Jerk.
 jump ~Pausewait
 label ~Face
 [background scene="res://zun's test/playthrough_3/face_closeup_3.tscn" fade="0.0"]
-You unlock the phone using the dead guy's face.
-The first thing you see is a conversation between you and a man called Bill, who you assume is the guy.
+You unlock the phone using his face.
+The first thing you see is a conversation between you and him.
 He called you a traitor and threatened to send you to the police.
 You delete the conversation.
 Then, you put it in your pocket.
@@ -47,7 +49,7 @@ label ~goto_bathroom
 [background scene="res://zun's test/playthrough_3/bathroom_3.tscn" fade="0.0"]
 set {CurrentLocation} = "Bathroom"
 if {BathroomIntro} == false:
-	You come to the bathroom, trying to figure out what to do next.
+	You already have a plan.
 	set {BathroomIntro} = true
 jump ~Pausewait
 label ~Mop
@@ -59,7 +61,8 @@ label ~JanitorCloset
 [background scene="res://zun's test/playthrough_3/janitor_closet_3.tscn" fade="0.0"]
 jump ~Pausewait
 label ~PaperTowel
-You wipe off the blood using the paper towels, and put it in your pocket.
+You wipe off the blood using the paper towels.
+They smell so good.
 do GameState.add_item("PaperTowel")
 set {EvidenceCount} += 1
 [wait time="0.5"]
@@ -73,7 +76,7 @@ set {EvidenceCount} += 1
 [background scene="res://zun's test/playthrough_3/janitor_closet_3.tscn" fade="0.0"]
 jump ~Pausewait
 label ~Gloves
-You take the gloves.
+You put on the gloves.
 do GameState.add_item("Gloves")
 set {EvidenceCount} += 1
 [wait time="0.5"]
@@ -81,7 +84,7 @@ set {EvidenceCount} += 1
 jump ~Pausewait
 label ~Detergent
 label ~Schedule
-You take the detergent
+You pick up the detergent.
 do GameState.add_item("Detergent")
 set {EvidenceCount} += 1
 [wait time="0.5"]
@@ -99,7 +102,7 @@ label ~goto_trashroom
 set {CurrentLocation} = "Trashroom"
 jump ~Pausewait
 label ~DestroyItem
-You throw away the evidence.
+You throw the evidence away.
 set {ThrowCount3} -= 1
 if {ThrowCount3} <= 0:
 	set {CanThrowBody} = true
@@ -121,10 +124,10 @@ jump ~Pausewait
 label ~Elevator
 if {BodyOnChair} == true && {CanThrowBody} == true:
 	[background scene="res://zun's test/playthrough_3/press_elevator_3.tscn" fade="0.0"]
-	You push the body all the way to the elevator.
+	You push Bill's body all the way to the elevator.
 	You pry open the elevator door, and press the UP button.
 	[background scene="res://zun's test/playthrough_3/elevetor_top_down_view_3.tscn" fade="0.0"]
-	You bring the body closer to the door.
+	As you bring Bill closer to the door, you whisper farewell to him.
 	Your face twitches.
 	It twitches into a smile.
 	No one will know where this man is.
@@ -146,7 +149,7 @@ if {BodyOnChair} == false:
 		[background scene="res://zun's test/playthrough_3/body_on_chair_A_3.tscn" fade="0.0"]
 	else:
 		[background scene="res://zun's test/playthrough_3/body_on_chair_A_3.tscn" fade="0.0"]
-		You put the body on the chair.
+		You put Bill's body onto the chair.
 		set {BodyOnChair} = true
 		set {CanCleanBlood} = true
 else:
