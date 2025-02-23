@@ -56,10 +56,10 @@ flag_name = "body"
 
 [node name="Int_Deskphone" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 245.0
-offset_top = 118.0
-offset_right = 285.0
-offset_bottom = 158.0
+offset_left = 97.0
+offset_top = 197.0
+offset_right = 137.0
+offset_bottom = 237.0
 script = ExtResource("4_61ddf")
 item_type = "MagnifyingGlass"
 goto_label = "~Deskphone"

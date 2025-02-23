@@ -55,10 +55,10 @@ goto_label = "~Body"
 
 [node name="Int_Deskphone" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 245.0
-offset_top = 118.0
-offset_right = 285.0
-offset_bottom = 158.0
+offset_left = 97.0
+offset_top = 195.0
+offset_right = 137.0
+offset_bottom = 235.0
 script = ExtResource("3_vvgjx")
 item_type = "MagnifyingGlass"
 goto_label = "~Deskphone"
