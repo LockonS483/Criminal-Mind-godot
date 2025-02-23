@@ -21,7 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hxdm8")
-rows = 6
+rows = 7
 cols = 1
 inventory_grid = NodePath("GridContainer")
 inventory_slot_scene = ExtResource("2_edstu")
@@ -31,9 +31,9 @@ item_spawns = [ExtResource("3_7sdlm"), ExtResource("4_le8ay"), ExtResource("5_ma
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 428.0
+offset_left = 433.0
 offset_top = 3.0
-offset_right = 488.0
+offset_right = 493.0
 offset_bottom = 63.0
 
 [node name="Tooltip" type="ColorRect" parent="."]

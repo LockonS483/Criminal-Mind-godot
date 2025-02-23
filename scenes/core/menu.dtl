@@ -1,0 +1,113 @@
+[music path="res://sounds/BGM.wav" fade="0.0" volume="0.0"]
+jump ~Pausewait
+label ~goto_office
+[background scene="res://zun's test/main_office_test.tscn" fade="0.0"]
+set {CurrentLocation} = "Office"
+if {OfficeIntro} == false:
+	The air is thick with a sharp, coppery scent, like rusted iron left out in the rain, clings to the back of your throat.
+	[background arg="res://SceneArt/Body Zoom.png" fade="0.0"]
+	A man lying in a pool of blood beside you.
+	You almost choked at the sight.
+	[background scene="res://zun's test/main_office_test.tscn" fade="0.0"]
+	As your mind clears, you begin analyzing the situation.
+	A knife is in your hand, and you are covered in blood.
+	do GameState.add_item("Knife")
+	set {EvidenceCount} += 1
+	There is a clock on the wall\: 5\:00.
+	It is an office, but it feels like hell.
+	set {OfficeIntro} = true
+	jump 
+label ~Pausewait
+[wait time="0.5"]
+do GameState.pause()
+label ~Phone
+The phone is locked, but it might come in handy.
+do GameState.add_item("Phone")
+set {EvidenceCount} += 1
+jump ~goto_office
+label ~Body
+[background scene="res://zun's test/body_shot_1_test.tscn" fade="0.0"]
+You don't recognize this man.
+jump ~Pausewait
+The phone is locked, but it might come in handy.
+do GameState.add_item("Phone")
+set {EvidenceCount} += 1
+[wait time="0.5"]
+[background scene="res://zun's test/main_office_test.tscn" fade="0.0"]
+jump ~Pausewait
+label ~goto_hallway
+[background arg="res://SceneArt/Hallway.png" fade="0.0"]
+set {CurrentLocation} = "Hallway"
+jump ~Pausewait
+label ~goto_bathroom
+[background scene="res://zun's test/bathroom_test.tscn" fade="0.0"]
+set {CurrentLocation} = "Bathroom"
+if {BathroomIntro} == false:
+	You come to the bathroom, trying to figure out what to do next.
+	set {BathroomIntro} = true
+jump ~Pausewait
+label ~JanitorCloset
+[background scene="res://zun's test/janitor_closet_1_test.tscn" fade="0.0"]
+jump ~Pausewait
+label ~PaperTowel
+You wipe off the blood using the paper towels, and put it in your pocket.
+do GameState.add_item("PaperTowel")
+set {EvidenceCount} += 1
+[wait time="0.5"]
+[background scene="res://zun's test/bathroom_test.tscn" fade="0.0"]
+jump ~Pausewait
+label ~Schedule
+[background arg="res://SceneArt/Cleaning Schedule.png" fade="0.0"]
+You see a schedule on the janitor's closet.
+[background arg="res://SceneArt/Cleaning Schedule 2.png" fade="0.0"]
+The schedule says the trash pickup comes at 5\:30.
+[wait time="1.0"]
+[background scene="res://zun's test/janitor_closet_1_test.tscn" fade="0.0"]
+jump ~Pausewait
+label ~goto_trashroom
+[background scene="res://zun's test/trash_room_1_test.tscn" fade="0.0"]
+set {CurrentLocation} = "Trashroom"
+jump ~Pausewait
+label ~DestroyItem
+You throw away the evidence.
+jump ~Pausewait
+label ~ChangeLocation
+if {CurrentLocation} == "Hallway":
+	- To the bathroom
+		jump ~goto_bathroom
+	- To the office
+		jump ~goto_office
+	- To the trash room
+		jump ~goto_trashroom
+else:
+	- To the hallway
+		jump ~goto_hallway
+label ~Deskphone
+if {EvidenceCount} == 3:
+	Before you use the deskphone to call the police, an idea came to your mind.
+	You should make yourself look like a victim.
+	Yes. That would be good.
+	After taking a deep breath, you smash your head against the wall so hard you almost pass out.
+	You have made sure everything's done correctly.
+	You call the police using a deskphone.
+	jump ~End_p1
+else:
+	You pick up the deskphone. Then you put it back down.
+	No. Don't call the police now.
+	What would they think if they come here now?
+	jump 
+jump ~Pausewait
+label ~End_p1
+[sound path="res://sounds/Fail.wav" volume="0.0"]
+[background scene="res://zun's test/ending_1_test.tscn" fade="0.0"]
+You thought you did everything, but you missed one thing.
+The police saw you in the surveillance clips.
+They charged you for murder.
+- "Restart"
+	do GameState.New_Playthrough()
+	jump p2_test/
+- Quit
+	[music fade="0.0" volume="0.0"]
+	do GameState.Back_to_Menu()
+jump ~Pausewait
+[music path="res://sounds/BGM.wav" fade="0.0" volume="0.0"]

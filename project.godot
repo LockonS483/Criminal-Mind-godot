@@ -24,6 +24,7 @@ GameState="*res://scenes/core/GameState.gd"
 
 directories/dch_directory={}
 directories/dtl_directory={
+"menu": "res://scenes/core/menu.dtl",
 "p1_loc": "res://scenes/core/p1_loc.dtl",
 "p1_test": "res://scenes/core/p1_test.dtl",
 "p2_test": "res://scenes/core/p2_test.dtl",
