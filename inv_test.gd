@@ -5,6 +5,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("inventory_scene onready")
 	inventory = inv_scene.instantiate()
 	add_child(inventory)
 	print("ready")

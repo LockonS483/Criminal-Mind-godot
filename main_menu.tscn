@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cf1mdtix1122i"]
+[gd_scene load_steps=3 format=3 uid="uid://cf1mdtix1122i"]
 
 [ext_resource type="Texture2D" uid="uid://j2rqndi6vawq" path="res://SceneArt/Title maybe.png" id="1_2g53o"]
 [ext_resource type="Script" path="res://main_menu.gd" id="1_xvoxh"]
-[ext_resource type="PackedScene" uid="uid://c6otqrfls4mo0" path="res://inv_test.tscn" id="2_4mnjw"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -14,7 +13,6 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xvoxh")
-StartScene = ExtResource("2_4mnjw")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

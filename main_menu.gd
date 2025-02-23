@@ -1,5 +1,5 @@
 extends Control
-@export var StartScene: PackedScene
+@export var StartScene: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,4 +11,4 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_start_pressed():
-	get_tree().change_scene_to_packed(StartScene)
+	get_tree().change_scene_to_file("res://inv_test.tscn")

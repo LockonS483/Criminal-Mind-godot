@@ -14,6 +14,7 @@ if {OfficeIntro} == false:
 	set {EvidenceCount} += 1
 	There is a clock on the wall\: 5\:00.
 	It is an office, but it feels like hell.
+	do GameState.Back_to_Menu()
 	set {OfficeIntro} = true
 	jump 
 label ~Pausewait
@@ -106,5 +107,6 @@ They charged you for murder.
 	do GameState.New_Playthrough()
 	jump p2_test/
 - Quit
-	(Quit)
+	[music fade="0.0" volume="0.0"]
+	do GameState.Back_to_Menu()
 jump ~Pausewait

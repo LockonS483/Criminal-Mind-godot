@@ -3,6 +3,7 @@ extends Node
 var destructed_nodes = []
 @onready var game_flags = {}
 
+
 func pause():
 	Dialogic.paused = true
 	for input_blocker in get_tree().get_nodes_in_group("InputBlocker"):
@@ -45,3 +46,8 @@ func New_Playthrough():
 	Inventory.WhichInstance.clear_inventory()
 	game_flags = {}
 	destructed_nodes = []
+
+func Back_to_Menu():
+	New_Playthrough()
+	get_tree().get_first_node_in_group("Inventory").queue_free()
+	get_tree().change_scene_to_file("res://main_menu.tscn")
