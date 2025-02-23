@@ -103,8 +103,8 @@ label ~End_p1
 You thought you did everything, but you missed one thing.
 The police saw you in the surveillance clips.
 They charged you for murder.
-- Restart
-	do GameState.New_Playthrough()
+- "Restart"
+	do GameState.New_Playthrough("Knife")
 	jump p2_test/
 - Quit
 	[music fade="0.0" volume="0.0"]

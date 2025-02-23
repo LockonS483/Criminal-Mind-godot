@@ -49,6 +49,7 @@ pivot_offset = Vector2(43, 0)
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ihrih")
 text = " Wake Up "
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
