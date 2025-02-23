@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgipifu2qntjw"]
+[gd_scene load_steps=9 format=3 uid="uid://dgipifu2qntjw"]
 
 [ext_resource type="Script" path="res://scenes/main_office.gd" id="1_wv51u"]
-[ext_resource type="Texture2D" uid="uid://bhmvnvr2afgt8" path="res://SceneArt/Janitor's closet.png" id="2_cmlpw"]
+[ext_resource type="Texture2D" uid="uid://todsjsmr8kum" path="res://SceneArt/Individual scenes and icons/Janitor's closet - No item.png" id="2_elefp"]
 [ext_resource type="PackedScene" uid="uid://xkgc22deglng" path="res://scenes/core/cursor_item.tscn" id="3_3ps7b"]
 [ext_resource type="Script" path="res://scenes/Interactable.gd" id="4_tyqho"]
+[ext_resource type="Texture2D" uid="uid://cowfbm8cqvpck" path="res://SceneArt/Individual scenes and icons/Gloves on map.png" id="5_mb7lk"]
+[ext_resource type="Texture2D" uid="uid://bapheuwntx0p3" path="res://SceneArt/Individual scenes and icons/Cloths on map.png" id="6_w0vor"]
+[ext_resource type="Texture2D" uid="uid://dg563rwhnvcdy" path="res://SceneArt/Individual scenes and icons/Detergent on map.png" id="7_4ofu8"]
+[ext_resource type="Texture2D" uid="uid://b4b5lmyhqegmc" path="res://SceneArt/Individual scenes and icons/Paper Towel On map.png" id="8_4wads"]
 
 [node name="JanitorCloset3" type="Control"]
 layout_mode = 3
@@ -27,7 +31,7 @@ color = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_right = 476.0
 offset_bottom = 244.0
-texture = ExtResource("2_cmlpw")
+texture = ExtResource("2_elefp")
 expand_mode = 1
 stretch_mode = 5
 
@@ -43,7 +47,7 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
-[node name="Int_PaperTowel" type="TextureButton" parent="."]
+[node name="Int_PaperTowel" type="TextureButton" parent="." node_paths=PackedStringArray("associated_sprite")]
 layout_mode = 0
 offset_left = 217.0
 offset_top = 138.0
@@ -51,21 +55,23 @@ offset_right = 269.0
 offset_bottom = 198.0
 script = ExtResource("4_tyqho")
 item_type = "MagnifyingGlass"
+associated_sprite = NodePath("../PaperTowel")
 goto_label = "~PaperTowel"
 flag_name = "papertowel"
 
-[node name="Int_Cloth" type="TextureButton" parent="."]
+[node name="Int_Cloth" type="TextureButton" parent="." node_paths=PackedStringArray("associated_sprite")]
 layout_mode = 0
-offset_left = 238.0
-offset_top = 112.0
+offset_left = 189.0
+offset_top = 101.0
 offset_right = 264.0
 offset_bottom = 136.0
 script = ExtResource("4_tyqho")
 item_type = "MagnifyingGlass"
+associated_sprite = NodePath("../Cloth")
 goto_label = "~Cloth"
 flag_name = "cloth"
 
-[node name="Int_Gloves" type="TextureButton" parent="."]
+[node name="Int_Gloves" type="TextureButton" parent="." node_paths=PackedStringArray("associated_sprite")]
 layout_mode = 0
 offset_left = 196.0
 offset_top = 63.0
@@ -73,10 +79,11 @@ offset_right = 222.0
 offset_bottom = 87.0
 script = ExtResource("4_tyqho")
 item_type = "MagnifyingGlass"
+associated_sprite = NodePath("../Gloves")
 goto_label = "~Gloves"
 flag_name = "glove"
 
-[node name="Int_Detergent" type="TextureButton" parent="."]
+[node name="Int_Detergent" type="TextureButton" parent="." node_paths=PackedStringArray("associated_sprite")]
 layout_mode = 0
 offset_left = 276.0
 offset_top = 158.0
@@ -84,8 +91,29 @@ offset_right = 318.0
 offset_bottom = 216.0
 script = ExtResource("4_tyqho")
 item_type = "MagnifyingGlass"
+associated_sprite = NodePath("../Detergent")
 goto_label = "~Detergent"
 flag_name = "detergent"
+
+[node name="Gloves" type="Sprite2D" parent="."]
+position = Vector2(211, 75)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_mb7lk")
+
+[node name="Cloth" type="Sprite2D" parent="."]
+position = Vector2(228, 122)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_w0vor")
+
+[node name="Detergent" type="Sprite2D" parent="."]
+position = Vector2(291, 189)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_4ofu8")
+
+[node name="PaperTowel" type="Sprite2D" parent="."]
+position = Vector2(242, 169)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_4wads")
 
 [connection signal="mouse_entered" from="Int_PaperTowel" to="Int_PaperTowel" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Int_PaperTowel" to="Int_PaperTowel" method="_on_mouse_exited"]

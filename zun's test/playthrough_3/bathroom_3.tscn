@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dj8hbp56aj2er"]
+[gd_scene load_steps=6 format=3 uid="uid://dj8hbp56aj2er"]
 
 [ext_resource type="Script" path="res://scenes/main_office.gd" id="1_uiiq5"]
-[ext_resource type="Texture2D" uid="uid://cwyfxdfj4p2kc" path="res://SceneArt/Bathroom.png" id="2_x2wli"]
+[ext_resource type="Texture2D" uid="uid://dseo7k5jsdarg" path="res://SceneArt/Individual scenes and icons/Bathroom no item..png" id="2_513yw"]
 [ext_resource type="PackedScene" uid="uid://xkgc22deglng" path="res://scenes/core/cursor_item.tscn" id="3_ke6v1"]
 [ext_resource type="Script" path="res://scenes/Interactable.gd" id="4_f3r2o"]
+[ext_resource type="Texture2D" uid="uid://jnsqfp0s7bbv" path="res://SceneArt/Individual scenes and icons/Mop On game.png" id="5_87tk3"]
 
 [node name="Bathroom3" type="Control"]
 layout_mode = 3
@@ -27,7 +28,7 @@ color = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_right = 476.0
 offset_bottom = 244.0
-texture = ExtResource("2_x2wli")
+texture = ExtResource("2_513yw")
 expand_mode = 1
 stretch_mode = 5
 
@@ -53,7 +54,7 @@ script = ExtResource("4_f3r2o")
 item_type = "MagnifyingGlass"
 goto_label = "~JanitorCloset"
 
-[node name="Int_Mop" type="TextureButton" parent="."]
+[node name="Int_Mop" type="TextureButton" parent="." node_paths=PackedStringArray("associated_sprite")]
 layout_mode = 0
 offset_left = 120.0
 offset_top = 65.0
@@ -61,8 +62,14 @@ offset_right = 175.0
 offset_bottom = 175.0
 script = ExtResource("4_f3r2o")
 item_type = "MagnifyingGlass"
+associated_sprite = NodePath("../Mop")
 goto_label = "~Mop"
 flag_name = "mop"
+
+[node name="Mop" type="Sprite2D" parent="."]
+position = Vector2(145, 120)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_87tk3")
 
 [connection signal="mouse_entered" from="Int_JanitorCloset" to="Int_JanitorCloset" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Int_JanitorCloset" to="Int_JanitorCloset" method="_on_mouse_exited"]

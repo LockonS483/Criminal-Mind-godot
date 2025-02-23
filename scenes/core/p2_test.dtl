@@ -105,7 +105,7 @@ label ~End_p2
 The police found your fingerprints all over the dead man's body.
 The bruises found on his limbs matched exactly to your fingers.
 No matter how you explained, no one believed that you're innocent.
-- Restart
+- "Restart"
 	jump p3_test/
 - Quit
 	(Quit)

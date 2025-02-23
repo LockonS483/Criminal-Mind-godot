@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2xkdiku3md1i"]
+[gd_scene load_steps=6 format=3 uid="uid://d2xkdiku3md1i"]
 
 [ext_resource type="Script" path="res://scenes/main_office.gd" id="1_vvkvm"]
-[ext_resource type="Texture2D" uid="uid://blgxyffkp1wh4" path="res://SceneArt/Body Zoom.png" id="2_oxiq7"]
+[ext_resource type="Texture2D" uid="uid://dslkttrvhrpjq" path="res://SceneArt/Individual scenes and icons/Body Zoom No phone.png" id="2_1p3nu"]
 [ext_resource type="Script" path="res://scenes/Interactable.gd" id="3_moc7h"]
 [ext_resource type="PackedScene" uid="uid://xkgc22deglng" path="res://scenes/core/cursor_item.tscn" id="4_mtnou"]
+[ext_resource type="Texture2D" uid="uid://dxyq438e1eytr" path="res://SceneArt/Individual scenes and icons/Phone on map.png" id="5_6tp3l"]
 
 [node name="BodyShot1Test" type="Control"]
 layout_mode = 3
@@ -27,18 +28,19 @@ color = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_right = 476.0
 offset_bottom = 252.0
-texture = ExtResource("2_oxiq7")
+texture = ExtResource("2_1p3nu")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Int_Phone" type="TextureButton" parent="."]
+[node name="Int_Phone" type="TextureButton" parent="." node_paths=PackedStringArray("associated_sprite")]
 layout_mode = 0
-offset_left = 96.0
-offset_top = 166.0
-offset_right = 213.0
-offset_bottom = 274.0
+offset_left = 132.0
+offset_top = 191.0
+offset_right = 191.0
+offset_bottom = 249.0
 script = ExtResource("3_moc7h")
 item_type = "MagnifyingGlass"
+associated_sprite = NodePath("../Phone")
 goto_label = "~Phone"
 flag_name = "phone"
 
@@ -53,6 +55,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
+
+[node name="Phone" type="Sprite2D" parent="."]
+position = Vector2(163, 221)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_6tp3l")
 
 [connection signal="mouse_entered" from="Int_Phone" to="Int_Phone" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Int_Phone" to="Int_Phone" method="_on_mouse_exited"]
