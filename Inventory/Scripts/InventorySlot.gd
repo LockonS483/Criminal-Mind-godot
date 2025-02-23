@@ -47,8 +47,8 @@ func update_slot():
 # Removes item from slot
 func remove_item():
 	if(item != null):
+		item.queue_free()
 		self.remove_child(item)
-		item.free()
 		item = null
 	update_slot()
 
@@ -62,7 +62,7 @@ func select_item() -> InventoryItem:
 	return tmp_item
 	
 func use_item():
-	print("used")
+	return
 
 # If swap, then returb swapped item, else return null and add new item
 func deselect_item(new_item: InventoryItem) -> InventoryItem:

@@ -150,5 +150,7 @@ func remove_all(_name: String) -> void:
 
 # !DESTRUCTUVE (removes all items from inventory)
 func clear_inventory() -> void:
+	print("clearing inventory")
 	for slot in slots:
+		print("removing item from", slot)
 		slot.remove_item()
