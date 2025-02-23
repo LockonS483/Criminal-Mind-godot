@@ -26,7 +26,7 @@ cols = 1
 inventory_grid = NodePath("GridContainer")
 inventory_slot_scene = ExtResource("2_edstu")
 tooltip = NodePath("Tooltip")
-closed_pos = Vector2(0, -60)
+closed_pos = Vector2(60, 0)
 item_spawns = [ExtResource("3_7sdlm"), ExtResource("4_le8ay"), ExtResource("5_mawqc"), ExtResource("6_a0y8x"), ExtResource("7_unuuh"), ExtResource("8_u41mc"), ExtResource("9_8ptc5")]
 
 [node name="GridContainer" type="GridContainer" parent="."]
