@@ -58,10 +58,10 @@ You wipe off the blood using the paper towels, and put it in your pocket.
 do GameState.add_item("PaperTowel")
 set {EvidenceCount} += 1
 [wait time="0.5"]
-[background scene="res://zun's test/janitor_closet_1_test.tscn" fade="0.0"]
+[background scene="res://zun's test/playthrough_2/janitor_closet_2.tscn" fade="0.0"]
 jump ~Pausewait
 label ~Schedule
-[background arg="res://SceneArt/Cleaning Schedule.png" fade="0.0"]
+[background arg="Cleaning Schedule.png" fade="0.0"]
 You see a schedule on the janitor's closet.
 [background arg="res://SceneArt/Cleaning Schedule 2.png" fade="0.0"]
 The schedule says the trash pickup comes at 5\:30.

@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6otqrfls4mo0"]
+[gd_scene load_steps=4 format=3 uid="uid://c6otqrfls4mo0"]
 
 [ext_resource type="Script" path="res://inv_test.gd" id="1_tdcpr"]
 [ext_resource type="PackedScene" uid="uid://dmsssc17q6swj" path="res://Exploration/Scenes/exploration_manager.tscn" id="2_lcv4f"]
+[ext_resource type="PackedScene" uid="uid://capmssb6fk5pd" path="res://transition_screen.tscn" id="3_840v1"]
 
 [node name="Inv_Scene" type="Node2D"]
 z_index = 5
 script = ExtResource("1_tdcpr")
 
 [node name="ExplorationManager" parent="." instance=ExtResource("2_lcv4f")]
+
+[node name="TransitionScreen" parent="." instance=ExtResource("3_840v1")]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckqwddblt7vfr"]
+
+[ext_resource type="Script" path="res://ending.gd" id="1_d2tfm"]
+[ext_resource type="PackedScene" uid="uid://capmssb6fk5pd" path="res://transition_screen.tscn" id="2_8ma0o"]
+
+[node name="ending" type="Node"]
+script = ExtResource("1_d2tfm")
+
+[node name="TransitionScreen" parent="." instance=ExtResource("2_8ma0o")]

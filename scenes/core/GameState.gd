@@ -1,8 +1,8 @@
 extends Node
 
 var destructed_nodes = []
+@onready var ending_scene: PackedScene = preload("res://Ending.tscn")
 @onready var game_flags = {}
-
 
 func pause():
 	Dialogic.paused = true
@@ -52,3 +52,6 @@ func Back_to_Menu():
 	New_Playthrough()
 	get_tree().get_first_node_in_group("Inventory").queue_free()
 	get_tree().change_scene_to_file("res://main_menu.tscn")
+
+func Start_Ending():
+	TransitionScreen.WhichInstance.start_transition(ending_scene)

@@ -28,7 +28,8 @@ directories/dtl_directory={
 "p1_test": "res://scenes/core/p1_test.dtl",
 "p2_test": "res://scenes/core/p2_test.dtl",
 "p3_test": "res://scenes/core/p3_test.dtl",
-"playthrough1": "res://scenes/core/playthrough1.dtl"
+"playthrough1": "res://scenes/core/playthrough1.dtl",
+"true_ending": "res://scenes/core/true_ending.dtl"
 }
 glossary/default_case_sensitive=true
 variables={

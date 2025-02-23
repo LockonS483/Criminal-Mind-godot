@@ -148,6 +148,13 @@ func remove_all(_name: String) -> void:
 		if slot.item and slot.item.item_name == _name:
 			slot.remove_item()
 
+# !non destructive (check if we have a certain item)
+func have_item(_name: String) -> bool:
+	for slot in slots:
+		if slot.item and slot.item.item_name == _name:
+			return true
+	return false
+	
 # !DESTRUCTUVE (removes all items from inventory)
 func clear_inventory() -> void:
 	print("clearing inventory")

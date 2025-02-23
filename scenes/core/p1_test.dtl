@@ -23,7 +23,6 @@ label ~Phone
 The phone is locked, but it might come in handy.
 do GameState.add_item("Phone")
 set {EvidenceCount} += 1
-jump ~End_p1
 jump ~goto_office
 label ~Body
 [background scene="res://zun's test/body_shot_1_test.tscn" fade="0.0"]

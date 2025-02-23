@@ -1,0 +1,14 @@
+do GameState.unpause()
+[music path="res://sounds/Ending.wav" fade="0.0" volume="0.0"]
+[background scene="res://zun's test/playthrough_3/true_ending.tscn" fade="0.0"]
+A group of scientists and detectives stand around the suspect; his head wired into a complex array of computers.
+His body is motionless, eyes darting beneath closed lids as he unknowingly relives the crime.
+Monitors flicker with reconstructed memories — his every move played back, analyzed, dissected.
+The detectives watch in silence, piecing together the truth. Then, a breakthrough.
+They finally see it. The moment he hid the body.
+With a nod, one of the officers speaks. "We’ve got him."
+The other one replies,
+"Well, well, well. Just when you thought nothing could go wrong...
+your mind has betrayed you...
+[background scene="res://zun's test/playthrough_3/black_scene.tscn" fade="0.0"]
+Thanks for playing!
