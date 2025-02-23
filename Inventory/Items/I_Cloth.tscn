@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ktp2o80ptr4u"]
+
+[ext_resource type="Script" path="res://Inventory/Scripts/Item.gd" id="1_5a456"]
+[ext_resource type="Texture2D" uid="uid://yx3renh37hvs" path="res://Inventory/Icons/Cloth.png" id="2_ljigy"]
+
+[node name="ICloth" type="Node"]
+script = ExtResource("1_5a456")
+item_name = "Cloth"
+icon = ExtResource("2_ljigy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(288, 288)
+rotation = 2.89201
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_ljigy")

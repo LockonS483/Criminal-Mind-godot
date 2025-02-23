@@ -37,7 +37,8 @@ script = ExtResource("1_6kyqy")
 scene = ExtResource("5_g1c2x")
 overrides = {
 "box_margin_bottom": "5.0",
-"box_size": "Vector2(470, 120)"
+"box_size": "Vector2(470, 120)",
+"typing_sounds_enabled": "false"
 }
 
 [sub_resource type="Resource" id="Resource_eeh5a"]
@@ -77,4 +78,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("1_6kyqy")]([])
-metadata/_latest_layer = ""
+metadata/_latest_layer = "10"

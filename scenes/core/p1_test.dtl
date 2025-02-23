@@ -1,3 +1,4 @@
+[music path="res://sounds/BGM.wav" fade="0.0" volume="0.0"]
 label ~goto_office
 [background scene="res://zun's test/main_office_test.tscn" fade="0.0"]
 set {CurrentLocation} = "Office"
@@ -97,6 +98,7 @@ else:
 	jump 
 jump ~Pausewait
 label ~End_p1
+[sound path="res://sounds/Fail.wav" volume="0.0"]
 [background scene="res://zun's test/ending_1_test.tscn" fade="0.0"]
 You thought you did everything, but you missed one thing.
 The police saw you in the surveillance clips.

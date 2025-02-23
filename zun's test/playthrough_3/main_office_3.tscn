@@ -54,6 +54,19 @@ item_type = "MagnifyingGlass"
 goto_label = "~Body"
 flag_name = "body"
 
+[node name="Int_Chair" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 151.0
+offset_right = 256.0
+offset_bottom = 194.0
+script = ExtResource("4_gsyni")
+item_type = "MagnifyingGlass"
+goto_label = "~BodyOnChair"
+
 [connection signal="mouse_entered" from="Int_Body" to="Int_Body" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Int_Body" to="Int_Body" method="_on_mouse_exited"]
 [connection signal="pressed" from="Int_Body" to="Int_Body" method="_on_pressed"]
+[connection signal="mouse_entered" from="Int_Chair" to="Int_Chair" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Int_Chair" to="Int_Chair" method="_on_mouse_exited"]
+[connection signal="pressed" from="Int_Chair" to="Int_Chair" method="_on_pressed"]

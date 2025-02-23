@@ -51,7 +51,7 @@ if {BathroomIntro} == false:
 jump ~Pausewait
 label ~Mop
 A mop. Perfect for cleaning up the mess.
-do GameState.add_item("Phone")
+do GameState.add_item("Mop")
 set {EvidenceCount} += 1
 jump ~Pausewait
 label ~JanitorCloset
@@ -64,7 +64,28 @@ set {EvidenceCount} += 1
 [wait time="0.5"]
 [background scene="res://zun's test/playthrough_3/janitor_closet_3.tscn" fade="0.0"]
 jump ~Pausewait
+label ~Cloth
+You take the cloth.
+do GameState.add_item("Cloth")
+set {EvidenceCount} += 1
+[wait time="0.5"]
+[background scene="res://zun's test/playthrough_3/janitor_closet_3.tscn" fade="0.0"]
+jump ~Pausewait
+label ~Gloves
+You take the gloves.
+do GameState.add_item("Gloves")
+set {EvidenceCount} += 1
+[wait time="0.5"]
+[background scene="res://zun's test/playthrough_3/janitor_closet_3.tscn" fade="0.0"]
+jump ~Pausewait
+label ~Detergent
 label ~Schedule
+You take the detergent
+do GameState.add_item("Detergent")
+set {EvidenceCount} += 1
+[wait time="0.5"]
+[background scene="res://zun's test/playthrough_3/janitor_closet_3.tscn" fade="0.0"]
+jump ~Pausewait
 [background arg="res://SceneArt/Cleaning Schedule.png" fade="0.0"]
 You see a schedule on the janitor's closet.
 [background arg="res://SceneArt/Cleaning Schedule 2.png" fade="0.0"]
@@ -78,35 +99,108 @@ set {CurrentLocation} = "Trashroom"
 jump ~Pausewait
 label ~DestroyItem
 You throw away the evidence.
+set {ThrowCount3} -= 1
+if {ThrowCount3} <= 0:
+	set {CanThrowBody} = true
 jump ~Pausewait
 label ~SecurityRoom
+set {CurrentLocation} = "SecurityRoom"
 [background scene="res://zun's test/playthrough_3/security_room_3.tscn" fade="0.0"]
 if {SecurityIntro} == false:
 	You can see the surveillance footage on the monitor; some of the cameras are even pointed directly at the body.
 	set {SecurityIntro} = true
 jump ~Pausewait
 label ~Keyboard
-With just a few clicks, you erased the clips, and turn off the cameras.
-set {EvidenceCount} += 1
-jump 
-label ~End_p3
-[background scene="res://zun's test/ending_1_test.tscn" fade="0.0"]
-The police found your fingerprints all over the dead man's body.
-The bruises found on his limbs matched exactly to your fingers.
-No matter how you explained, no one believed that you're innocent.
-- Restart
-	jump p3_test/
-- Quit
-	(Quit)
+if {BodyIsThrown} == true:
+	With just a few clicks, you erased the clips, and turn off the cameras.
+	jump ~TrueEnding
+else:
+	Before you delete the surveillance clips, you have some other stuff to take care of.
+jump ~Pausewait
+label ~Elevator
+if {BodyOnChair} == true && {CanThrowBody} == true:
+	[background scene="res://zun's test/playthrough_3/press_elevator_3.tscn" fade="0.0"]
+	You push the body all the way to the elevator.
+	You pry open the elevator door, and press the UP button.
+	[background scene="res://zun's test/playthrough_3/elevetor_top_down_view_3.tscn" fade="0.0"]
+	You bring the body closer to the door.
+	Your face twitches.
+	It twitches into a smile.
+	No one will know where this man is.
+	You wait for the right moment.
+	And
+	You
+	Throw
+	(Thud)
+	set {BodyIsThrown} = true
+	All you have to do now is to delete the clips and leave.
+else:
+	You shouldn't leave.
+	You still have things to take care of.
+jump ~Pausewait
+label ~BodyOnChair
+set {CurrentLocation} = "Office"
+if {BodyOnChair} == false:
+	if {CanCleanBlood} == true:
+		[background scene="res://zun's test/playthrough_3/body_on_chair_A_3.tscn" fade="0.0"]
+	else:
+		[background scene="res://zun's test/playthrough_3/body_on_chair_A_3.tscn" fade="0.0"]
+		You put the body on the chair.
+		set {BodyOnChair} = true
+		set {CanCleanBlood} = true
+else:
+	[background scene="res://zun's test/playthrough_3/body_on_chair_A_3.tscn" fade="0.0"]
+jump ~Pausewait
+label ~CleanBlood
+set {CurrentLocation} = "Office"
+if {EvidenceCount} >= 7:
+	if {BloodCleaned} == false:
+		[background scene="res://zun's test/playthrough_3/body_on_chair_B_3.tscn" fade="0.0"]
+		You clean up the scene until it looks like nothing ever happened.
+		You start whistling.
+		set {BloodCleaned} = true
+else:
+	You should get something to clean the blood.
+jump ~Pausewait
+label ~BloodCleaned
+if {BloodCleaned} == true:
+	[background scene="res://zun's test/playthrough_3/body_on_chair_B_3.tscn" fade="0.0"]
+jump ~Pausewait
+label ~TrueEnding
+[music path="res://sounds/Ending.wav" fade="0.0" volume="0.0"]
+[background scene="res://zun's test/playthrough_3/true_ending.tscn" fade="0.0"]
+A group of scientists and detectives stand around the suspect; his head wired into a complex array of computers.
+His body is motionless, eyes darting beneath closed lids as he unknowingly relives the crime.
+Monitors flicker with reconstructed memories — his every move played back, analyzed, dissected.
+The detectives watch in silence, piecing together the truth. Then, a breakthrough.
+They finally see it. The moment he hid the body.
+With a nod, one of the officers speaks. "We’ve got him."
+The other one replies,
+"Well, well, well. Just when you thought nothing could go wrong...
+your mind has betrayed you...
+[background scene="res://zun's test/playthrough_3/black_scene.tscn" fade="0.0"]
+Thanks for playing!
 jump ~Pausewait
 label ~ChangeLocation
 if {CurrentLocation} == "Hallway":
 	- To the bathroom
 		jump ~goto_bathroom
 	- To the office
-		jump ~goto_office
+		if {BodyOnChair} == true:
+			jump ~BodyOnChair
+		else:
+			if {BodyOnChair} == true:
+				jump ~BodyOnChair
+			elif {CanCleanBlood} == true:
+				jump ~BodyOnChair
+			elif {BloodCleaned} == true:
+				jump ~BloodCleaned
+			else:
+				jump ~goto_office
 	- To the trash room
 		jump ~goto_trashroom
+	- To the security  room
+		jump ~SecurityRoom
 else:
 	- To the hallway
 		jump ~goto_hallway

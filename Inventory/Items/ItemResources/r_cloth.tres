@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemSpawnResource" load_steps=3 format=3 uid="uid://ddho2jv4usl0c"]
+
+[ext_resource type="PackedScene" uid="uid://ktp2o80ptr4u" path="res://Inventory/Items/I_Cloth.tscn" id="1_tiwnf"]
+[ext_resource type="Script" path="res://Inventory/Scripts/ItemSpawnResource.gd" id="2_3qocy"]
+
+[resource]
+script = ExtResource("2_3qocy")
+item_name = "Cloth"
+item_scene = ExtResource("1_tiwnf")

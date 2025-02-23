@@ -51,7 +51,7 @@ offset_right = 140.0
 offset_bottom = 137.0
 script = ExtResource("4_7pfly")
 item_type = "Knife"
-other_items = ["PaperTowel", "Phone"]
+other_items = ["PaperTowel", "Phone", "Mop", "Detergent", "Cloth", "Gloves"]
 destroy_item = true
 goto_label = "~DestroyItem"
 

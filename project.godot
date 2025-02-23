@@ -33,10 +33,17 @@ directories/dtl_directory={
 glossary/default_case_sensitive=true
 variables={
 "BathroomIntro": false,
-"CurrentLocation": "Office",
+"BloodCleaned": false,
+"BodyIsThrown": false,
+"BodyOnChair": false,
+"CanCleanBlood": false,
+"CanThrowBody": false,
+"CurrentLocation": "",
 "EvidenceCount": 0,
+"HaveMop": false,
 "OfficeIntro": false,
-"SecurityIntro": false
+"SecurityIntro": false,
+"ThrowCount3": 7
 }
 layout/style_list=["res://addons/dialogic_style.tres"]
 layout/default_style="res://addons/dialogic_style.tres"

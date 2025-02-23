@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemSpawnResource" load_steps=3 format=3 uid="uid://ce5hcisdagexi"]
+
+[ext_resource type="PackedScene" uid="uid://dm2mx7rjyc300" path="res://Inventory/Items/I_Mop.tscn" id="1_5rxkh"]
+[ext_resource type="Script" path="res://Inventory/Scripts/ItemSpawnResource.gd" id="2_orync"]
+
+[resource]
+script = ExtResource("2_orync")
+item_name = "Mop"
+item_scene = ExtResource("1_5rxkh")

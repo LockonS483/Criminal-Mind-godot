@@ -52,7 +52,6 @@ offset_bottom = 140.0
 script = ExtResource("4_3mo8u")
 item_type = "MagnifyingGlass"
 goto_label = "~Keyboard"
-flag_name = "keyboard"
 
 [connection signal="mouse_entered" from="Int_Keyboard" to="Int_Keyboard" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Int_Keyboard" to="Int_Keyboard" method="_on_mouse_exited"]

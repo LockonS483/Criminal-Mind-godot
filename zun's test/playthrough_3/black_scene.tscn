@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwjhlfbyuhc4o"]
+
+[ext_resource type="Script" path="res://scenes/main_office.gd" id="1_4hxl2"]
+[ext_resource type="PackedScene" uid="uid://xkgc22deglng" path="res://scenes/core/cursor_item.tscn" id="3_hiy5x"]
+
+[node name="BlackScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4hxl2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 476.0
+offset_bottom = 244.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CursorItem" parent="." instance=ExtResource("3_hiy5x")]
+layout_mode = 0
+
+[node name="InputBlocker" type="Control" parent="." groups=["InputBlocker"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true

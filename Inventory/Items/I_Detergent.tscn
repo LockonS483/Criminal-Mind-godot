@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://48ywgh23qc7m"]
+
+[ext_resource type="Script" path="res://Inventory/Scripts/Item.gd" id="1_s1gt4"]
+[ext_resource type="Texture2D" uid="uid://jmpwpabw57vx" path="res://Inventory/Icons/Detergent.png" id="2_17pm8"]
+
+[node name="IDetergent" type="Node"]
+script = ExtResource("1_s1gt4")
+item_name = "Detergent"
+icon = ExtResource("2_17pm8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(288, 288)
+rotation = 2.89201
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_17pm8")

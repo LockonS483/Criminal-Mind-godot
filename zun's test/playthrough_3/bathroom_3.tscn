@@ -55,14 +55,18 @@ goto_label = "~JanitorCloset"
 
 [node name="Int_Mop" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 125.0
-offset_top = 67.0
-offset_right = 165.0
-offset_bottom = 177.0
+offset_left = 120.0
+offset_top = 65.0
+offset_right = 175.0
+offset_bottom = 175.0
 script = ExtResource("4_f3r2o")
 item_type = "MagnifyingGlass"
 goto_label = "~Mop"
+flag_name = "mop"
 
 [connection signal="mouse_entered" from="Int_JanitorCloset" to="Int_JanitorCloset" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Int_JanitorCloset" to="Int_JanitorCloset" method="_on_mouse_exited"]
 [connection signal="pressed" from="Int_JanitorCloset" to="Int_JanitorCloset" method="_on_pressed"]
+[connection signal="mouse_entered" from="Int_Mop" to="Int_Mop" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Int_Mop" to="Int_Mop" method="_on_mouse_exited"]
+[connection signal="pressed" from="Int_Mop" to="Int_Mop" method="_on_pressed"]

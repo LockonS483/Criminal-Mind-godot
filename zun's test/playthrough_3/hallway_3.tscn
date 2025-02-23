@@ -53,6 +53,19 @@ script = ExtResource("4_upod5")
 item_type = "MagnifyingGlass"
 goto_label = "~SecurityRoom"
 
+[node name="Int_Elevator" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 53.0
+offset_right = 408.0
+offset_bottom = 221.0
+script = ExtResource("4_upod5")
+item_type = "MagnifyingGlass"
+goto_label = "~Elevator"
+
 [connection signal="mouse_entered" from="Int_SecurityRoom" to="Int_SecurityRoom" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Int_SecurityRoom" to="Int_SecurityRoom" method="_on_mouse_exited"]
 [connection signal="pressed" from="Int_SecurityRoom" to="Int_SecurityRoom" method="_on_pressed"]
+[connection signal="mouse_entered" from="Int_Elevator" to="Int_Elevator" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Int_Elevator" to="Int_Elevator" method="_on_mouse_exited"]
+[connection signal="pressed" from="Int_Elevator" to="Int_Elevator" method="_on_pressed"]
