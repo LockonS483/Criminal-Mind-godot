@@ -46,9 +46,10 @@ func update_slot():
 
 # Removes item from slot
 func remove_item():
-	self.remove_child(item)
-	item.free()
-	item = null
+	if(item != null):
+		self.remove_child(item)
+		item.free()
+		item = null
 	update_slot()
 
 func select_item() -> InventoryItem:

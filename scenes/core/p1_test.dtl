@@ -23,8 +23,7 @@ label ~Phone
 The phone is locked, but it might come in handy.
 do GameState.add_item("Phone")
 set {EvidenceCount} += 1
-[wait time="0.5"]
-do GameState.pause()
+jump ~goto_office
 label ~Body
 [background scene="res://zun's test/body_shot_1_test.tscn" fade="0.0"]
 You don't recognize this man.
@@ -104,6 +103,7 @@ You thought you did everything, but you missed one thing.
 The police saw you in the surveillance clips.
 They charged you for murder.
 - Restart
+	do GameState.New_Playthrough()
 	jump p2_test/
 - Quit
 	(Quit)

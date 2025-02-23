@@ -40,3 +40,8 @@ func set_flag(flag_name: String, val: bool) -> void:
 	
 func Set_Dialogic_variable(vname: String, val: Variant):
 	Dialogic.VAR.set_variable(vname, val)
+
+func New_Playthrough():
+	Inventory.WhichInstance.clear_inventory()
+	game_flags = {}
+	destructed_nodes = []

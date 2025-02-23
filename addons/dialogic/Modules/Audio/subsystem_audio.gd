@@ -82,6 +82,7 @@ func load_game_state(load_flag:=LoadFlags.FULL_LOAD) -> void:
 
 ## Pauses playing audio.
 func pause() -> void:
+	return
 	for child in get_children():
 		child.stream_paused = true
 
