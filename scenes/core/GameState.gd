@@ -46,6 +46,7 @@ func New_Playthrough():
 	Inventory.WhichInstance.clear_inventory()
 	game_flags = {}
 	destructed_nodes = []
+	Dialogic.VAR.reset()
 
 func Back_to_Menu():
 	New_Playthrough()

@@ -4,6 +4,7 @@ var inventory: Inventory
 
 func _ready():
 	inventory = get_tree().get_first_node_in_group("Inventory")
+	z_index = 120
 
 func _process(delta: float) -> void:
 	position = get_global_mouse_position()

@@ -1,15 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cf1mdtix1122i"]
+[gd_scene load_steps=4 format=3 uid="uid://dmnwryil18hq5"]
 
 [ext_resource type="Texture2D" uid="uid://j2rqndi6vawq" path="res://SceneArt/Title maybe.png" id="1_2g53o"]
+[ext_resource type="FontFile" uid="uid://coivbs3wbbg7i" path="res://PixelOperator8.ttf" id="1_noyx1"]
 [ext_resource type="Script" path="res://main_menu.gd" id="1_xvoxh"]
 
-[node name="MainMenu" type="Control"]
+[node name="Menu" type="Control"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xvoxh")
@@ -21,16 +20,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -282.0
-offset_top = -187.0
-offset_right = 280.0
-offset_bottom = 187.0
+offset_left = -276.0
+offset_top = -186.0
+offset_right = 283.0
+offset_bottom = 186.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(561, 0)
+pivot_offset = Vector2(296, 0)
 texture = ExtResource("1_2g53o")
 expand_mode = 1
-stretch_mode = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -39,17 +37,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -43.0
-offset_top = 100.0
-offset_right = 43.0
-offset_bottom = 131.0
+offset_left = -52.0
+offset_top = 80.0
+offset_right = 52.0
+offset_bottom = 104.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(43, 0)
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_ihrih")
-text = " Wake Up "
+theme_override_fonts/font = ExtResource("1_noyx1")
+text = "Wake Up"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]

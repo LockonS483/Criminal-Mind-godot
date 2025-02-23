@@ -14,7 +14,6 @@ if {OfficeIntro} == false:
 	set {EvidenceCount} += 1
 	There is a clock on the wall\: 5\:00.
 	It is an office, but it feels like hell.
-	do GameState.Back_to_Menu()
 	set {OfficeIntro} = true
 	jump 
 label ~Pausewait

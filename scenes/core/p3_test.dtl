@@ -1,3 +1,4 @@
+[music path="res://sounds/BGM.wav" fade="0.0" volume="0.0"]
 label ~goto_office
 [background scene="res://zun's test/playthrough_3/main_office_3.tscn" fade="0.0"]
 set {CurrentLocation} = "Office"
