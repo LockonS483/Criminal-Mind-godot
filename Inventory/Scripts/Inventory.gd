@@ -18,7 +18,7 @@ var slots: Array[InventorySlot]
 @export var open_pos: Vector2
 @export var closed_pos: Vector2
 var target_pos: Vector2
-var is_open: bool = false
+var is_open: bool = true
 
 static var selected_item: Item = null
 
