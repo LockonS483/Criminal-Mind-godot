@@ -11,6 +11,9 @@ class_name Interactable
 @export var flag_name: String = ""
 var CURSOR_ITEM
 
+@export var require_var: String = ""
+@export var require_val: bool = true
+
 func _ready() -> void:
 	if GameState.is_self_destruct(self_destruct_id):
 		queue_free()
@@ -28,11 +31,17 @@ func check_cursor_item():
 		CURSOR_ITEM = get_tree().get_first_node_in_group("CursorItem")
 
 func can_exist() -> bool:
+	
+	if require_var != "":
+		if Dialogic.VAR.get_variable(require_var) != require_val:
+			return false
+	
 	if flag_name == "":
 		return true
 	
 	if not Dialogic.paused:
 		return false
+		
 	
 	return !GameState.check_flag(flag_name)
 

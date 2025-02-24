@@ -16,7 +16,6 @@ if {OfficeIntro} == false:
 	Hell.
 	set {OfficeIntro} = true
 	jump 
-	label ~goto_office
 label ~Pausewait
 [wait time="0.5"]
 do GameState.pause()
@@ -37,6 +36,7 @@ He called you a traitor and threatened to send you to the police.
 You delete the conversation.
 Then, you put it in your pocket.
 do GameState.add_item("Phone")
+set {Phone3} = true
 set {EvidenceCount} += 1
 jump ~goto_office
 jump ~Pausewait
@@ -106,6 +106,9 @@ set {ThrowCount3} -= 1
 if {ThrowCount3} <= 0:
 	set {CanThrowBody} = true
 jump ~Pausewait
+label ~CannotDestroy
+You should clean the body first.
+jump ~Pausewait
 label ~SecurityRoom
 set {CurrentLocation} = "SecurityRoom"
 [background scene="res://zun's test/playthrough_3/security_room_3.tscn" fade="0.0"]
@@ -143,16 +146,18 @@ else:
 jump ~Pausewait
 label ~BodyOnChair
 set {CurrentLocation} = "Office"
-if {BodyOnChair} == false:
-	if {CanCleanBlood} == true:
-		[background scene="res://zun's test/playthrough_3/body_on_chair_A_3.tscn" fade="0.0"]
+if {Phone3} == true:
+	if {BodyOnChair} == true:
+		if {CanCleanBlood} == true:
+			if {BloodCleaned} == true:
+				[background scene="res://zun's test/playthrough_3/body_on_chair_B_3.tscn" fade="0.0"]
+			else:
+				[background scene="res://zun's test/playthrough_3/body_on_chair_A_3.tscn" fade="0.0"]
 	else:
 		[background scene="res://zun's test/playthrough_3/body_on_chair_A_3.tscn" fade="0.0"]
 		You put Bill's body onto the chair.
 		set {BodyOnChair} = true
 		set {CanCleanBlood} = true
-else:
-	[background scene="res://zun's test/playthrough_3/body_on_chair_A_3.tscn" fade="0.0"]
 jump ~Pausewait
 label ~CleanBlood
 set {CurrentLocation} = "Office"
@@ -180,8 +185,6 @@ if {CurrentLocation} == "Hallway":
 		if {BodyOnChair} == true:
 			jump ~BodyOnChair
 		else:
-			if {BodyOnChair} == true:
-				jump ~BodyOnChair
 			elif {CanCleanBlood} == true:
 				jump ~BodyOnChair
 			elif {BloodCleaned} == true:

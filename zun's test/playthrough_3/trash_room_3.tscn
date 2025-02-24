@@ -54,7 +54,23 @@ item_type = "Knife"
 other_items = ["PaperTowel", "Phone", "Mop", "Detergent", "Cloth", "Gloves"]
 destroy_item = true
 goto_label = "~DestroyItem"
+require_var = "BloodCleaned"
+
+[node name="Int_Dumpster2" type="TextureButton" parent="Int_Dumpster"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+script = ExtResource("4_7pfly")
+item_type = "Knife"
+other_items = ["PaperTowel", "Phone", "Mop", "Detergent", "Cloth", "Gloves"]
+goto_label = "~CannotDestroy"
+require_var = "BloodCleaned"
+require_val = false
 
 [connection signal="mouse_entered" from="Int_Dumpster" to="Int_Dumpster" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Int_Dumpster" to="Int_Dumpster" method="_on_mouse_exited"]
 [connection signal="pressed" from="Int_Dumpster" to="Int_Dumpster" method="_on_pressed"]
+[connection signal="mouse_entered" from="Int_Dumpster/Int_Dumpster2" to="Int_Dumpster/Int_Dumpster2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Int_Dumpster/Int_Dumpster2" to="Int_Dumpster/Int_Dumpster2" method="_on_mouse_exited"]
+[connection signal="pressed" from="Int_Dumpster/Int_Dumpster2" to="Int_Dumpster/Int_Dumpster2" method="_on_pressed"]
